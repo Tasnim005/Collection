@@ -12,3 +12,4 @@ const options = {
 const typed = new Typed(element, options);
 
 // Lesson starts from here
+// lorem
