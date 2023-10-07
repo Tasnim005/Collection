@@ -1,0 +1,37 @@
+html{
+    font-size: 1.8rem;
+}
+button{
+    display: block;
+}
+
+.required::before{
+    display: block;
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+.required::after{
+    display: block;
+    content: ' ';
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+}
+
+[data-tooltip]{
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: lightgray;
+}

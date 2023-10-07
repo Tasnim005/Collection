@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/T.svg"
+    />
+    <title>Age calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <label for="day">Day</label>
+          <input type="number" name="" id="day" placeholder="DD" />
+          <p></p>
+        </div>
+        <div class="container">
+          <label for="month">Month</label>
+          <input type="number" name="" id="month" placeholder="MM" />
+        </div>
+        <div class="container">
+          <label for="year">Year</label>
+          <input type="number" name="" id="year" placeholder="YYYY" />
+        </div>
+      </div>
+
+      <div class="design">
+        <div class="arrow">
+          <img src="assets/images/icon-arrow.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="age">
+        <h1><span class="output year">--</span> years</h1>
+        <h1><span class="output month">--</span> months</h1>
+        <h1><span class="output day">--</span> days</h1>
+      </div>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/Tasnim005">Tasnim Alam</a>.
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

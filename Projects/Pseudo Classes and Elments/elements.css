@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p{
+    font-size:  4rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p::before{
+    content: ' hello';   
+    /* If we are making a pseudo-element with before or after we must use the content property. */
+    background-color: red;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+    display: block;
+}
+
+p::after{
+    content: ' goodbye';
+    background-color: red;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 900;
+}
+
+/* p::after{
+    content: ' ';
+    background-color: red;
+    display: block;
+    width: 10px;
+    height: 10px;
+} */
+
+/* 
+img::before{
+    content: ' ';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: purple;
+} */
+
+/* Dont try putting pseudo-elements on images because it won't work, */

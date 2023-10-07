@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 98%);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  margin: 2.5rem auto 0 auto;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+}
+
+header .slogan {
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+
+header .text {
+  width: 30%;
+  margin: 1rem auto;
+  margin-bottom: 3rem;
+  color: hsl(229, 6%, 66%);
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "....Team....."
+    "Supervisor Team Calculator"
+    "Supervisor Karma Calculator"
+    "...Karma...";
+  gap: 2rem;
+}
+
+.cards {
+  background-color: white;
+  padding: 2rem 2rem 1rem 2rem;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1),
+    0 3px 6px 0 rgba(69, 211, 211, 0.05);
+  border-radius: 10px;
+}
+
+.cards:nth-of-type(1) {
+  border-top: 4px solid hsl(180, 62%, 55%);
+  grid-area: Supervisor;
+}
+
+.cards:nth-of-type(2) {
+  border-top: 4px solid hsl(0, 78%, 62%);
+  grid-area: Team;
+}
+
+.cards:nth-of-type(3) {
+  border-top: 4px solid hsl(34, 97%, 64%);
+  grid-area: Karma;
+}
+
+.cards:nth-of-type(4) {
+  border-top: 4px solid hsl(212, 86%, 64%);
+  grid-area: Calculator;
+}
+
+.cards p {
+  margin: 0.5rem auto 2rem auto;
+  color: hsl(229, 6%, 66%);
+}
+
+.cards .image {
+  text-align: right;
+}
+
+footer {
+  margin: 2.5rem auto 1rem auto;
+}
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(212, 86%, 64%);
+  text-decoration: none;
+}
+
+@media (max-width: 1068px) {
+  main {
+    width: 85%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "Supervisor Team"
+      "Karma Calculator";
+  }
+
+  header .text {
+    width: 50%;
+  }
+}
+
+@media (max-width: 750px) {
+  main {
+    width: 90%;
+    grid-template-areas:
+      "Supervisor"
+      " Team "
+      " Karma "
+      "Calculator";
+  }
+  header .text {
+    width: 70%;
+  }
+}

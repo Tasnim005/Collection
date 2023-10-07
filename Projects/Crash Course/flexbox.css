@@ -1,0 +1,40 @@
+body{
+    background-color: #09233c;
+    font-family: optima;
+    color: #fff;
+}
+
+img{
+    max-width: 100%;
+}
+
+h1{
+    font-size: 40px;
+}
+
+p{
+    font-size: 18px;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.layout{
+    margin: 0 auto;
+    padding: 12vh;
+    width: 80%;
+    max-width: 960px;
+    background-color: #002d4f;
+    text-align: center;
+}
+
+.parent-layout{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.child-element{
+    border: 1px solid #00487e;
+    margin: 1.5%;
+    width: 30%;
+}
+

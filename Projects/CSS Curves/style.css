@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: hsl(0, 0%, 13%);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--body-bg);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 50rem;
+  /* margin-left: auto;
+    margin-right: auto; */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.25rem;
+}
+
+section {
+  padding-block: 5rem;
+  /* padding-block is the alternative of using padding-top and padding-bottom at once */
+}
+
+.diagonal {
+  --skew-angle: -5deg;
+  --background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  position: relative;
+  isolation: isolate;
+  /* background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59); */
+}
+/* we will use an "isolation: isolate;" so that the negative one Z index has to
+stay within the diagonal the same way as before when we used "position: relative;" where we're keeping our pseudo element
+ */
+
+.diagonal::after {
+  content: "";
+  background: var(--background);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(var(--skew-angle));
+}
+
+.spikes {
+  --spike-color: var(--body-bg);
+  --spike-width: 50px;
+  --spike-height: 10px;
+  position: relative;
+  background: linear-gradient(to right, #fdc830, #f37335);
+  color: black;
+}
+
+.spikes::before,
+.spikes::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--spike-height);
+  background: var(--spike-color);
+  -webkit-mask-image: url("images/triangle.svg");
+  -webkit-mask-size: var(--spike-width) var(--spike-height);
+  mask-image: url("images/triangle.svg");
+  mask-size: var(--spike-width) var(--spike-height);
+}
+
+/* SVG Path Editor
+Link: https://www.youtube.com/watch?v=FCuNtCq3nRg&t=0s */
+
+.spikes::before {
+  top: 0;
+}
+
+.spikes::after {
+  bottom: 0;
+  transform: rotate(0.5turn);
+}
+
+.wavy {
+  background: linear-gradient(to right, #00f260, #0575e6);
+  /* Mask Created with https://css-generators.com/wavy-shapes/ */
+  --mask: radial-gradient(52.57px at 50% 71.25px, #000 99%, #0000 101%)
+      calc(50% - 50px) 0/100px 51% repeat-x,
+    radial-gradient(52.57px at 50% -46.25px, #0000 99%, #000 101%) 50% 25px/100px
+      calc(51% - 25px) repeat-x,
+    radial-gradient(52.57px at 50% calc(100% - 71.25px), #000 99%, #0000 101%)
+      calc(50% - 50px) 100%/100px 51% repeat-x,
+    radial-gradient(52.57px at 50% calc(100% + 46.25px), #0000 99%, #000 101%)
+      50% calc(100% - 25px) / 100px calc(51% - 25px) repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+
+
+/* Create interesting blob shapes with CSS
+Video: https://www.youtube.com/watch?v=4ALLynsZ0u0
+Link: https://9elements.github.io/fancy-border-radius/
+*/

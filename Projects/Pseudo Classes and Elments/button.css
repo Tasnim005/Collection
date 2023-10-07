@@ -1,0 +1,70 @@
+/* .tasnim {
+  font-size: 1.2em;
+  background: #f34711;
+  color: #fff;
+  border: 0.25rem solid #f34711;
+  padding: 0.6em 1.3em;
+  margin: 1rem;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.tasnim:hover {
+  color: #f34711;
+}
+
+.tasnim::after {
+  content: "";
+  background: black;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  transition: all 0.5s ease;
+}
+
+.tasnim:hover::after {
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  transition: all 0.5s ease;
+} */
+
+
+button {
+  font-size: 1rem;
+  background: #f34711;
+  color: #fff;
+  border: 0.2rem solid #f34711;
+  padding: 0.6rem 1.3rem;
+  margin-top: 2rem;
+  position: relative;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+button:hover {
+  color: #f34711;
+}
+
+button::after {
+  content: "";
+  background: black;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  transition: all 0.5s ease;
+}
+
+button:hover::after {
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  transition: all 0.5s ease;
+}

@@ -1,0 +1,397 @@
+html {
+	box-sizing: border-box;
+	font-family: Optima;
+}
+
+body {
+	font-size:1.25rem;
+	margin: 0px;
+	line-height: 1.6em;
+	background-color: #09233c;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	display: grid;
+	grid-gap:20px;
+}
+
+.btn {
+	background-color: orange;
+	color:black;
+	text-decoration: none;
+	padding: 0.6rem 1.3rem;
+	border-radius:20px;
+}
+
+
+
+img {
+	width: 100%;
+	overflow: hidden;
+	display: block;
+}
+
+
+/*navbar starts*/
+
+.navbar{
+	background-color: white;
+	width:100%;
+	height: 60px;
+	position: fixed;
+	top:0; /*space above the nav bar*/
+}
+
+.navbar p{
+	font-family: Arial;
+	font-size: 1.5rem;
+	line-height: 18px;
+	float: left;
+	padding: 0px 20px;
+}
+
+.navbar ul{
+	float: left;
+}
+
+.navbar ul li{
+	background-color: white;
+	list-style: none;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+
+.navbar ul li a{
+	color: black;
+	font-size: 1rem;
+	text-decoration:none;
+	padding: 0px 14px;
+	display: block;
+}
+
+.navbar ul li a:hover{
+	background-color: white;
+	color:#00caf4;
+}
+
+.navbar ul li ul{
+	display: none;
+	position: absolute;
+}
+
+.navbar ul li:hover ul{
+	display: block;
+}
+
+.navbar ul li ul li{
+	width: 180px;
+	text-align: center;
+	background-color: white;
+}
+
+.navbar ul li ul li a:hover{
+	background-color:white;
+}
+
+.navbar label, #hamburger{
+	display:none;
+}
+
+
+/*navbar ends*/
+
+/*section starts*/
+
+#showcase {
+	background-image:url('https://images.pexels.com/photos/34140/pexels-photo.jpg?crop=entropy&cs=srgb&dl=pexels-negative-space-34140.jpg&fit=crop&fm=jpg&h=3648&w=5472');
+	background-position: center;
+	background-size:cover;
+	min-height: 37.5rem;;
+	padding: 1rem;
+	color: white;
+	text-align: center;
+	/*display: grid;*/
+}
+
+#showcase h1{
+	padding-top: 100px;
+	font-size: 4rem;
+	margin-bottom: 0;
+	line-height: 1.2em;
+}
+
+#mPlans {
+	display: grid;
+	grid-gap:20px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /*repeat(3, 1fr);*/
+	color: white;
+	padding: 40px 20px;
+}
+
+#mPlans h2{
+	color: #00caf4;
+}
+
+
+.container{
+	text-align: center;
+	padding: 1.5rem 2rem;
+	border-radius: 50px;
+	background: #09233c;
+	box-shadow:  5px 5px 10px #040e18,
+				 -5px -5px 10px #0e3860;
+}
+
+/*Box starts*/
+
+#boxes {
+	background-color: #002d4f;
+	color: white;
+	display: grid;
+	grid-gap:20px;
+	grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+	padding: 50px 20px;
+}
+
+.box h3{
+	color: #00caf4;
+}
+
+.box{
+	padding: 1.5rem 2rem;
+	text-align: center;
+	border-radius: 50px;
+	background: #002d4f;
+	box-shadow:  5px 5px 10px #001220,
+			 -5px -5px 10px #00487e;
+	
+}
+
+/*Info section starts*/
+
+#info{
+	background-color: #09233c;
+	color:white;
+	text-align:center;
+	display: grid;
+	grid-gap:30px;
+	grid-template-columns:repeat(2, 1fr);
+	padding: 4rem;
+	border-radius: 50px;
+	background: #09233c;
+	box-shadow:  5px 5px 10px #040e18,
+				 -5px -5px 10px #0e3860;
+				 
+	margin-right: 20px;
+	margin-left: 20px;			 
+}
+
+#info h1{
+	color:#00caf4;
+}
+
+/*About me section starts*/
+
+#about-me{
+	background-color: #002d4f;
+	color: white;
+	text-align: center;
+	display: grid;
+	grid-gap:30px;
+	grid-template-columns:repeat(2, 1fr);
+	padding: 4rem;
+	border-radius: 50px;
+	background: #002d4f;
+	box-shadow:  5px 5px 10px #001220,
+			 -5px -5px 10px #00487e;
+	
+	margin-right: 20px;
+	margin-left: 20px;	
+}
+
+#about-me h1{
+	color: #00caf4;
+}
+
+
+/*Portfolio Starts*/
+
+#portfolio{
+	display: grid;
+	grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap:20px;
+	padding: 40px 20px;
+}
+
+#portfolio img{
+	width: 100%;
+	background: #09233c;
+	box-shadow:  5px 5px 10px #040e18,
+				 -5px -5px 10px #0e3860;
+}
+
+/*Contact section starts*/
+
+#contact{
+	background-color: #002d4f;
+	color: white;
+	border-radius:50px;
+	box-shadow:  5px 5px 10px #001220,
+			 -5px -5px 10px #00487e;
+	text-align: center;
+	padding: 4rem;
+	margin-right: 20px;
+	margin-left: 20px;	
+}
+
+#contact h1{
+	color: #00caf4;
+}
+
+.submit {
+	background-color: orange;
+	padding: 20px 45px;
+	border-radius: 1px;
+	cursor: pointer;
+	color: white;
+	border: none;
+	outline: none;
+	margin: 0;
+	font-weight: bold;
+}
+.submit:hover {
+	background-color: #00caf4;
+}
+textarea {
+	height: 100px;
+}
+input, textarea {
+	margin-bottom: 10px;
+	font-size: 11pt;
+	padding: 15px 10px 10px;
+	border: 1px solid #cecece;
+	background-color: #efefef;
+	color: black;
+	border-radius: 5px;
+	width: 70%;
+	outline: none;
+}
+
+/*follow me section starts*/
+
+#follow{
+	background-color: #09233c;
+	border-radius:50px;
+	box-shadow:  5px 5px 10px #040e18,
+				 -5px -5px 10px #0e3860;
+	color: #00caf4;
+	text-align: center;
+	float: left;
+	margin-right: 20px;
+	margin-left: 20px;	
+}
+
+.flw img{
+display: inline;
+	width: 50px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+/*footer starts*/
+
+footer{
+    background:white;
+    color:black;
+    padding: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+ 
+
+@media (max-width: 768px) {
+    .navbar label{
+        display: inline-block;
+        background:white;
+        color: black;
+        padding: 10px;
+        /*float: right;*/
+    }
+    
+    #hamitems ul{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        /*display: grid;
+        grid-template-columns:repeat(auto-fit, minmax(100px, 1fr));*/
+        width: 100%;
+        /*border: 1px solid #333;*/
+        /*padding-top: 0;*/
+        padding: 0rem 3rem;
+        margin-top: 0;
+    }
+  /*Toggle show or hide menu*/
+ 
+ 
+  #hamitems{
+    display: none;
+    top: 0;
+}
+
+
+  .navbar input:checked ~ #hamitems{
+    display:block;
+}
+  
+}
+
+
+@media (max-width: 500px){
+	
+	.wrapper{
+		overflow-x: auto;
+		max-width: 100%;
+	}
+	
+	.navbar ul li{
+		padding: 10px;
+	}
+	
+	#hamitems ul{
+		font-size: 1.5rem;
+		
+	}
+	
+	#mPlans{
+		grid-template-columns: 1fr;
+	}
+	
+	#boxes{
+		grid-template-columns:1fr;
+	}
+	
+	#info{
+		grid-template-columns:1fr; 
+	}
+	
+	#about-me{
+	   grid-template-columns:1fr;  
+	}
+	
+	#portfolio{
+		  grid-template-columns:1fr;  
+	}
+	
+	#contact{
+		grid-template-columns:1fr;  
+	}
+	
+}
+
+
+
+
+

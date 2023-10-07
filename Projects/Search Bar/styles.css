@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#myInput{
+    width: 100%;
+    padding: 18px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.2rem;
+}
+
+#myUL {
+    list-style: none;
+}
+
+#myUL li a {
+    text-decoration: none;
+    color: black;
+    padding: 12px;
+    font-size: 18px;
+    display: block;
+}

@@ -1,0 +1,125 @@
+# Regular Expressions or RegEx 
+A way to search through a string of text. Having the ability to search through text, validate text, and replace text using an advanced set of rules is exactly what Regex is for. 
+
+We'll insert this text in the text bar of the website:
+'The fat cat ran down the street.
+It was searching for a mouse to eat.'
+
+<!-- https://regexr.com/ -->
+
+In the Expression flag, 'global' will show all the matched words. But without global, only the first matched word will be highlighted.
+
+## If we want to search a string of letter 
+(let say, 'e') 
+Using the quantifier, '+' matches 1 or more of the preceding token. If we write '/e+/', it's gonna match 'e'. Now if there's 2e's (ee), it's gonna search for that as well
+
+Now, if we write '/e+a/', it'll show the result with 'ea' only. But, if we write '/e+a?/' it'll match 0 or 1 of the preceding token, effectively making it 'optional'. So, it's gonna show the result with both 'e' and 'ea' if exist in the text.
+
+Let's remove '+' and write '/ea?/'  It's gonna get the character 'e' & if there's 'a', it'll get that as well.
+
+## '*' It's a combination of '+' & '?'
+/re*/ It'll match anything if there's 'r'  & it's gonna match all 'e's that follow.
+
+## '.' Period character 
+matches any character except linebreaks.
+
+## '/\./' 
+To find the period
+
+## '/\w/' 
+Matches any word character 
+## '/\W/' 
+Matches anything that's 'not' a word character 
+
+## '/\s/' 
+Matches any whitespace character (spaces, tabs, line breaks).
+
+## '/\S/' 
+It is the 'negative' version of '/\s/' .It's gonna match anything that's 'not' a whitespace character
+
+
+<!--To get all the words that are longer than 'x' characters  -->
+'/\w{4}' We'll get anything 'equal to' 4 characters
+
+'/\w{4, }' We'll get anything 'equal to' or 'more' than 4 characters
+
+'/\w{4,5}' It'll get any set of word between 4 to 5 character.
+
+## Character grouping
+Let's say we want to get a 3 letter word that has 'at' at the end and starts with either 'f' or 'c'
+
+'/[fc]at/'
+
+<!-- All of the characters between 'a' & 'z' and 'A' & 'Z' -->
+'/[a-z][A-Z]at/'
+
+<!-- Match both uppercase and lowercase -->
+'/(T|t)he/'
+
+<!-- Capturing Group -->
+Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.
+
+'/(t|e|r){2,3}/' 
+
+'/(t|e|r){2,3}\./' 
+
+**Let's write 'rererere' in the text bar and enter the following expressions:
+
+'/(re){2,3}/' 
+
+But if we write;
+'/re{2,3}/' ; it will only look for words that has 2 to 3 e's
+
+
+To capture only the word between 'fat' and 'ran':
+
+**Regex pattern:** (?<=fat )\b\w+\b(?= ran)
+
+Explanation:
+
+**(?<=fat )** is a positive lookbehind assertion that matches 'fat' but does not include it in the selection.
+
+**\b** represents a word boundary to ensure the captured word is a 'whole word'.
+
+**\w+** matches one or more word characters.
+(?= ran) is a positive lookahead assertion that matches ' ran' but does not include it in the selection.
+
+
+
+<!-- Caret Symbol '^' -->
+Matches the beginning of the string, or the beginning of a line if the multiline flag (m) is enabled. This matches a position, not a character.
+"/^T/g"
+
+Now, let's say we want to select the 'I' in the next line, writing the following expression:
+"/^I/g" won't work.
+
+In order to do this we've to select 'multiline' flag.
+"/^I/gm"
+
+<!-- Use of dollar sign $ -->
+Matches the end of the string, or the end of a line if the multiline flag (m) is enabled. This matches a position, not a character.
+'/\.$/g'
+
+
+// Don't get confused with the name. Think the name with respect to the word you want to match not the expression.
+
+<!-- 'Look Behind'-->
+(?<=...) Positive Look Behind: Matches a group before the main expression without including it in the result.
+
+'/(?<=[Tt]he)./g'
+
+Here, we'll get the word 'fat' which is 'PRECEDED' by the word 'The'
+
+
+(?<!...) Negative Look Behind: Specifies a group that can not match before the main expression (if it matches, the result is discarded).
+
+'/(?<![Tt]he)./g'
+
+
+<!-- 'Look Ahead' -->
+(?=...) Positive Look Ahead: Matches a group after the main expression without including it in the result.
+'/.(?=at)/g'
+
+(?!...) Negative Look Ahead: Specifies a group that can not match after the main expression (if it matches, the result is discarded).
+'/.(?!at)/g'
+

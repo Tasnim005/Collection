@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    background-color: #f4f4f4;
+    /* Always is on main axis */
+    /* justify-content: end;
+    align-items: start; */
+    /* flex-wrap: wrap; */
+}
+
+.item{
+    /* flex-basis: 100px;
+    flex-grow: 1;  */
+    /* all the items always going to be the same size */
+
+    /* Here the flex grow is 1 the flex shrink is 0 & then the flex basis is 100 pixels. Now we just have 3 three same size columns that that all grow at the same rate*/
+    /* flex: 1 0 100px; */
+    flex: 1;     /* a short way of doing the same thing */
+
+    height: 100px;
+    background-color: #254de4;
+    color: white;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Align self */
+
+.item:nth-of-type(1) {
+    /*It's just  a ratio*/
+    /* flex-grow: 3;  */
+    /* flex-basis: 200px;  */
+    /*Now the 1st item won't be smaller than 200px*/
+
+    /* align-self: start; */
+    /* order: 2; */
+    flex-shrink: 1;
+}
+
+.item:nth-of-type(2) {
+    /* flex-grow: 2; */
+    /* align-self: center; */
+    /* order: 1;  */
+    flex-shrink: 2;
+}
+
+.item:nth-of-type(3) {
+    /* flex-grow: 1; */
+    /* align-self: end; */
+    /* order: 3; */
+    flex-shrink: 3;
+}
+
+/* flex-shrink is the opposite of flex-grow */
+/*  flex propertyis a combination of flex basis, flex grow and flex shrink */
+

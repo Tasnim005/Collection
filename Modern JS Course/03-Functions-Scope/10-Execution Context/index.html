@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Execution Context</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header><h1>Execution Context</h1></header>
+    <main>
+      <p>
+        When you run any JavaScript, a special environment is created to handle
+        the transformation & execution of code. This is called the execution
+        context. It contains the currently running code and everything that aids
+        in its execution.
+      </p>
+      <br />
+      <p>
+        There is a global execution context as well as a function execution
+        context for every function invoked
+      </p>
+      <img src="Group 5.png" alt="" />
+    </main>
+
+    <article>
+      <h2>Execution Context Phases</h2>
+
+      <ol>
+        Memory Creation Phase:
+        <li>Create the global object (browser window, Node.js = global)</li>
+        <li>Create the 'this' object and bind it to the global object</li>
+        <li>Setup memory heap for storing variables and function references</li>
+        <li>
+          Store functions and variables in global execution context and set to
+          "undefined
+        </li>
+      </ol>
+
+      <ol>
+        Execution Phase:
+        <li>Execute code line by line</li>
+        <li>Memory Creation Phase:</li>
+      </ol>
+    </article>
+
+    <section class="explanation">
+      <pre>
+        <code>
+          1 let x 100
+          2 let y = 58
+          3 function getSum (n1, 12) {
+          4 let sum = n1 + n2
+          5 return sum
+          6 }
+          7 let sum1 = getsum(x, y)
+          8 let sum2 = getsum(10, 5)
+        </code>
+      </pre>
+      <h3>Creation Phase:</h3>
+      <p>
+        <b>Line 1:</b> x variable is allocated memory and stores "undefined"
+        Line 2: y variable is allocated memory and stores "undefined"
+      </p>
+      <p>
+        <b>Line 3:</b> getSum() function is allocated memory and stores all the
+        code
+      </p>
+      <p>
+        <b>Line 7:</b> sum1 variable is allocated memory and stores "undefined"
+      </p>
+      <p>
+        <b>Line 8:</b> sum2 variable is allocated memory and stores "undefined"
+      </p>
+
+      <h3>Execution Phase:</h3>
+      <p><b>Line 1:</b> Places the value of 100 into the x variable</p>
+      <p><b>Line 2:</b> Places the value of 50 into the y variable</p>
+      <p>
+        <b>Line 3:</b> Skips the function because there is nothing to execute
+      </p>
+      <p>
+        <b>Line 7:</b> Invokes the getSum() function and creates a new function
+        execution context
+      </p>
+    </section>
+
+    <section class="EC">
+      <pre>
+        <code>
+          1 let x 100
+          2 let y = 58
+          3 function getSum (n1, 12) {
+          4 let sum = n1 + n2
+          5 return sum
+          6 }
+          7 let sum1 = getsum(x, y)
+          8 let sum2 = getsum(10, 5)
+        </code>
+      </pre>
+      <img src="EC.png" alt="" />
+      <h3>Function EC Creation Phase:</h3>
+      <p>
+        <b>Line 3:</b>n1 & n2 variables are allocated memory and stores
+        "undefined"
+      </p>
+      <p>
+        <b>Line 4:</b> sum variable is allocated memory and stores "undefined"
+      </p>
+
+      <h3>Function EC Execution Phase:</h3>
+      <p><b>Line 3:</b> n1 & n2 are assigned 100 and 50</p>
+      <p>
+        <b>Line 4:</b> Calculation is done and 150 is put into the sum variable
+      </p>
+      <p>
+        <b>Line 5:</b>return tells the function EC to return to the global EC
+        with value of sum (150)
+      </p>
+      <p><b>Line 7:</b> Returned sum value is put into the sum1 variable</p>
+      <p>
+        <b>Line 8:</b> Open another function execution context and do the same
+        thing with different parameters
+      </p>
+    </section>
+
+    
+    <script src="script.js"></script>
+  </body>
+</html>

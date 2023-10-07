@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  width: 80%;
+  margin: 6rem auto 3rem auto;
+  background-image: url(images/bg-pattern-top-desktop.svg),
+    url(images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--dark-magenta);
+  margin-bottom: 1.7rem;
+  width: 70%;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  /* outline: 1px solid yellowgreen; */
+  margin-bottom: 6rem;
+}
+
+.intro p {
+  width: 80%;
+  color: var(--dark-grayish-magenta);
+}
+
+/* .ratings {
+  outline: 1px solid red;
+} */
+
+.container {
+  display: flex;
+  padding: 1rem 0 1rem 1rem;
+  border-radius: 0.6rem;
+  margin-bottom: 1rem;
+  background: var(--light-grayish-magenta);
+  width: 100%;
+}
+
+.container:nth-child(1) {
+  margin-left: -3rem;
+}
+
+.container:nth-child(3) {
+  margin-left: 3rem;
+}
+
+.container h3 {
+  color: var(--dark-magenta);
+}
+
+.stars {
+  margin-right: 2rem;
+}
+
+.testimonial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.wrapper {
+  background: var(--dark-magenta);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+/* Here, height is set to 100% so that each of the wrapper divs will have the same height*/
+/* display: grid & place-content: center; have been used to get rid of the extra space below the text*/
+
+.wrapper:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.wrapper:nth-child(3) {
+  margin-top: 2rem;
+}
+
+.user {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 1.8rem;
+}
+
+.profile p {
+  color: var(--soft-pink);
+  margin-top: 0.2rem;
+}
+
+footer {
+    margin: 5rem auto 0 auto;
+  }
+  .attribution {
+    color: black;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .attribution a {
+    color: var(--soft-pink);
+    text-decoration: none;
+  }
+
+@media (max-width: 1050px) {
+  body {
+    width: 85%;
+  }
+}
+
+@media (max-width: 950px) {
+  body {
+    width: 70%;
+  }
+  main {
+    grid-template-columns: 1fr;
+    place-items: center;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1.7rem;
+    width: 100%;
+  }
+
+  .intro p {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .ratings {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .container:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .container:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .stars {
+    margin-right: 0;
+    margin-bottom: 0.7rem;
+  }
+
+  .testimonial {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .wrapper {
+    background: var(--dark-magenta);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    height: 100%;
+    display: grid;
+    place-content: center;
+  }
+
+  .wrapper:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .wrapper:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 300px) {
+    body {
+      width: 95%;
+    }
+
+    .user {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      
+      .user img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      
+  }

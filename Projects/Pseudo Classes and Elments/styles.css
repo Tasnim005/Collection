@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-bottom: 1rem;
+}
+
+p{
+    font-size: 1.3rem;
+}
+
+a:hover{
+    color: red;
+}
+
+/* When you hover the mouse over, the state is different */

@@ -1,0 +1,50 @@
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 90%;
+    margin: 1rem auto;
+}
+
+h1{
+    font-size: 2.5rem;
+    color: orangered;
+    margin-bottom: 1rem;
+}
+
+/* p is a block element. So BLOCK ELEMENTS always stack on top of each other. They force a new line of content automatically*/
+p{
+    font-size: 1.4rem;
+    outline: 3px solid orangered;
+}
+
+/* INLINE ELEMENTS are for when we don't want a new line of text. They live inside other things. Link tags, strong, em tags etc*/
+
+
+a{
+    /* outline: 3px solid orchid; */
+    color: blue;
+    /* margin: 100px;
+    padding: 100px;
+    height: 100px; We can't give height, margin to inline elements */
+    /* Padding might show up visually but it doesn;t do anything. It's not affecting hthe layout. It's getting in the way pretty much. */
+}
+/* Here the links are only taking the width of content themselves.*/
+
+/* When we need an inline elements that can have padding and margin on it. In that situation, INLINE-BLOCK ELEMENTS come in. e.g. when we style link as buttons. */
+
+.btn{
+    display: inline-block; /*if we use display:block; the size or width is gonna 100%*/
+    background-color: lightblue;
+    color: black;
+    padding: 25px 75px;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background-color: darkblue;
+    color: white;
+}
+
+/* 10:50 */

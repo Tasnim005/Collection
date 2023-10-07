@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background-image: linear-gradient(
+    to bottom,
+    #af67e9,
+    #9f67e9,
+    #8d66e9,
+    #7a66e8,
+    #6565e7
+  );
+  width: 100%;
+}
+
+h1{
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+p {
+  font-size: 14px;
+  color: #4a4b5e;
+}
+
+main {
+  background: white;
+  width: 70%;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 1rem;
+}
+
+.illustration {
+  position: relative;
+  display: flex;
+  background-image: url(images/illustration-woman-online-desktop.svg),
+    url(images/bg-pattern-desktop.svg);
+  background-position: -4.5rem, 115% 60%;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+}
+
+.mobileIllustration {
+  display: none;
+}
+/* background-position: -33rem -15rem; */
+
+/* .illustration img{
+    width: 100%;
+} */
+
+/* .illustration .pattern{
+    position: absolute;
+    width: 100%;
+    top: 8rem;
+    left: -18rem;
+    z-index: 3;
+} */
+
+/* .illustration .woman{
+    position: absolute;
+    width: 100%;
+   
+    top: 12%;
+    left: -15%;
+} */
+
+.illustration .box {
+  position: absolute;
+  width: 100%;
+  /* top: 15rem;
+    left: -6rem; */
+  top: 40%;
+  left: -22%;
+}
+
+.accordion {
+  width: 80%;
+  margin: 4rem auto 4rem 0;
+}
+
+.accordion .card {
+  border-bottom: 1px solid #e7e7e9;
+}
+
+.accordion .card .question {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.accordion .card .question:hover p{
+  color: #f47c57;
+  cursor:pointer;
+}
+
+.accordion .card .content {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 500ms;
+}
+
+.accordion .card .content p {
+  font-size: 13px;
+  color: #787887; 
+}
+
+p.open{
+  margin-bottom: 1rem;
+  transition: margin 500ms;
+}
+
+.accordion .card .content.closed {
+  grid-template-rows: 0fr;
+}
+
+.content p {
+  overflow: hidden;
+}
+
+button {
+  background: none;
+  border: none;
+  transition: transform 500ms;
+}
+
+button img {
+  width: 12px;
+  height: 9px;
+}
+
+button.rotation {
+  transform: rotate(180deg);
+}
+
+footer {
+  margin: 0rem auto 1rem auto;
+}
+.attribution {
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.attribution a {
+  color: #f47c57;
+  text-decoration: none;
+}
+
+
+@media (max-width: 1200px){
+  main {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1065px){
+  main {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 60%;
+    margin: 10rem auto 5rem auto;
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .illustration {
+    display: none;
+  }
+
+  .illustration .box {
+    display: none;
+  }
+
+  .mobileIllustration {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: -22%;
+  }
+
+  .mobileIllustration .woman img:nth-child(2){
+    margin-top: -5rem;
+  }
+
+  .accordion {
+    width: 80%;
+    margin: 4rem auto;
+  }
+
+  .accordion h1 {
+    text-align: center;
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width:600px){
+  main {
+    width: 75%;
+  }
+}
+
+@media (max-width:500px){
+  main {
+    width: 90%;
+  }
+}

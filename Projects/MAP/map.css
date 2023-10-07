@@ -1,0 +1,22 @@
+body {
+  position: relative;
+}
+
+.earth {
+  background-image: url(images/1920px-Blue_Marble_2002.png);
+  background-size: cover;
+  box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  inset: 0;
+  margin: 10rem auto;
+  border-radius: 50%;
+  animation: spin 10s linear alternate infinite;
+}
+
+@keyframes spin{
+    to{
+        background-position: 100%;
+    }
+}

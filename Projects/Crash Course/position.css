@@ -1,0 +1,27 @@
+.parent{
+    background-color: aquamarine;
+    height: 75vh;
+    width: 75vh;
+    padding: 1em;
+    margin: 50px auto;
+    position: relative;
+}
+
+.parent p{
+    position: relative;
+    z-index: 10;
+}
+.child{
+    background-color: red;
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    right: 25%;
+    left: 25%;
+}
+
+/*position: absolute will look for a parent that has position: relative. position: absolute is always relative to the last thing (parent) that has position: relative on it. If nothing has  position: relative on it then it will be relative to the body.*/
+
+/* We can use z-index for layering things. z-index: 0 is the default. (-VE) values will layer it beneath and (+ve) values will layer it above*/
+
+/* We need to have position: relative for z-index to work. otherwise, it will not work.*/

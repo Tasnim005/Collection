@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h1{
+    margin-bottom: 2rem;
+}
+
+section {
+  padding: 30vh 0;
+}
+
+.one {
+  background: #ffc145;
+  position: relative;
+}
+
+.one__icon{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 2em;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;  /* Border radius shall be used with a perfect square to make a circle. otherwise, it might end up being an oval.*/
+    display: grid;
+    place-items: center; /*Short prop. of justify-content: center; & align-items: center. It can be used when display:grid.*/
+}
+
+.one::after,
+.one::before{
+    position: absolute;
+    content: '';
+    background-color: #ffc145;
+    width: 150px;
+    height: 150px;
+    bottom: -1em;
+    z-index: 100;
+}
+
+.one::before{
+    right: 50%;
+    transform: skew(0, 20deg);
+}
+
+.one::after{
+    left: 50%;
+    transform: skew(0, -20deg);
+}
+
+.two{
+    background: #FF6B6C;
+    position: relative;
+    z-index: 10;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+    margin-bottom: -10vw; 
+
+    /* to suck the empty space because of calc(100% - 10vh), we will use this margin-bottom: 10vh;  */
+
+}
+
+.two__image{
+    /* clip-path: circle(40%); */
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%); 
+}
+
+/* Clip path website link : https://bennettfeely.com/clippy/ */
+
+.three {
+  background: #5b5f97;
+}

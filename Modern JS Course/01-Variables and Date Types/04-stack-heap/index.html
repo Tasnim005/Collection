@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack Vs Heap</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </head>
+
+  <body>
+    <header id="typewriter"></header>
+    <main>
+      <div class="container">
+        <h1 class="title">Stack</h1>
+        <p>
+          The stack is a <span class="highlight">fixed-size memory</span> area
+          used to
+          <span class="highlight">store function calls and local variables</span
+          >. When a function is called, a new stack frame is created. This stack
+          frame contains the function's arguments, local variables, and the
+          return address. When the function returns, its stack frame is popped
+          off the stack. The stack is always
+          <span class="highlight"
+            >accessed in a last-in-first-out (LIFO) order</span
+          >. This means that the most recently pushed item is always the first
+          item to be popped off.
+        </p>
+      </div>
+      <div class="container">
+        <h1 class="title">Heap</h1>
+        <p>
+          The heap is a <span class="highlight">dynamic memory area</span> used
+          to <span class="highlight">store objects and functions.</span> When an
+          object is created, it is allocated space on the heap. When an object
+          is no longer needed, its memory is garbage collected. The heap is
+          <span class="highlight">accessed in a random order.</span> This means
+          that there is no guarantee in which order objects will be allocated or
+          garbage collected.
+        </p>
+      </div>
+    </main>
+    <section class="example">
+      <pre class="code-block">
+        <code>
+  // Values are stored on the stack
+    let name = 'John'
+    let age = 30
+          
+  //Reference values are stored on the heap
+          
+    let person = {
+        name: 'Brad',
+        age: 40,
+    }
+          
+    let newName = name
+    newName = 'Jonathan'
+          
+    let newPerson = person
+    newPerson.name = 'Bradley'
+          
+    console.log(person.name) //Bradley
+        </code>
+      </pre>
+      <img src="images/Group 3.png" alt="" />
+    </section>
+
+    <article>
+      <h2 class="title">A simple analogy</h2>
+      <p>
+        Think of the stack as a stack of trays. Each time you enter a cafeteria,
+        you take a tray from the top of the stack and place it on the table.
+        When you leave, you remove the tray and put it back on top of the stack.
+        It's a <span class="highlight">temporary workspace with limited capacity</span>.
+      </p>
+      <br>
+      <p>
+        Think of the heap as a storage area where you can place objects that you
+        want to keep for an extended period. It's like <span class="highlight">renting a storage unit</span>
+        where you can store items, and you need to remember to return the key
+        when you're done.
+      </p>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #a7dbe3;
+    color: #555;
+    font-size: 21px;
+    text-align: center;
+}
+
+p{
+    color: white
+}
+
+h1 {
+    font-size: 70px;
+    color: #3747b3
+}
+
+img{
+    max-width: 100%;
+}
+
+/*CSS Box Model
+ margin: empty space around my element that pushes things   away from my element
+
+ border: a border around my element (border-width;   border-color border-style)
+
+ padding; empty space with background around my element
+
+ All of these add on the top of the width and height.
+*/
+
+.box {
+    background-image: url(images/taj.jpg);
+    background-size: cover;
+    /* background-repeat & background-position*/
+    width: 300px;
+    margin: 100px;
+    border: 5px solid green;
+    padding: 100px;
+}
+
+/* Total width is 300px+ (100px+100px) from the 'margin' + (5px+5px) from the 'border' + (100px+100px) from the'padding' equals to 710px
+*/
+
+/* Styling Links*/
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited{
+    color: purple;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: blue
+}
+
+/* It is very important to put these things in order unless they won't work.*/
+
+/*Styling Lists*/
+
+ul{
+    background-color: pink;
+    padding: 50px;
+    list-style-position: inside;
+}
+
+ul li {
+    background-color: red;
+    margin-bottom: 15px;
+}
+
+ol {
+    list-style-type: upper-alpha;
+    list-style-position: inside;
+    background-color: #006688;
+    padding: 50px;
+}
+
+ol li{
+    background-color: blue;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Floats and clears*/
+/* floats were created for one specific purpose. that is to wrap text around images.*/
+
+.container img{
+    float: right;
+    margin-left: 15px;
+}
+
+.grid-parent{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   grid-gap: 1em;
+}
+
+.grid-children{
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.wrapper{
+    background-color: #00487e;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bg-images{
+    outline: 1px solid black;
+    padding: 20em;
+/*  background-size: 50% 50px;*/
+    background-image: url(images/laptop.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+}
+
+/* here one represents x-axis & othe y-axis respectively*/
+
+/*images*/
+
+img{
+    max-width: 100%;
+    display: block;
+}
+.example{
+    background-color: #09233c;
+    margin-top: 5px;
+}
+
+.container-2{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+}
+
+.myHeader{
+    border: 1px solid #00487e;
+    background-color: #002d4f;
+}
+
+.example-2{
+    border: 1px solid #00487e;
+    background-color: #002d4f;
+}

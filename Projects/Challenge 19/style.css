@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+}
+
+body {
+  background: var(--Off-white);
+  font-family: "Poppins", sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+main {
+  width: 50%;
+  background: var(--White);
+  padding: 2rem;
+  border-radius: 1rem 1rem 8rem 1rem;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: var(--Smokey-grey);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+input {
+  color: var(--Off-black);
+  font-weight: 800;
+  font-size: 1.4rem;
+  width: 75%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--Off-white);
+  border-radius: 5px;
+  text-align: left;
+}
+
+/* Remove the arrow/spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::placeholder {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 1px solid var(--Smokey-grey);
+}
+
+.design {
+  display: flex;
+  justify-content: right;
+}
+
+.arrow {
+  background: var(--Purple);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  padding: 1rem;
+}
+
+.arrow img {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow:hover,
+.arrow:focus {
+  background: var(--Off-black);
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 4rem;
+}
+
+span {
+  color: var(--Purple);
+}
+
+footer {
+  width: 90%;
+  margin-inline: auto;
+}
+.attribution {
+  color: var(--Smokey-grey);
+  font-size: 0.8rem;
+  text-align: center;
+}
+.attribution a {
+  color: var(--Purple);
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  main {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 65%;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    width: 70%;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .design {
+    display: flex;
+    justify-content: center;
+    margin-block: 2rem 2.7rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    width: 85%;
+  }
+}

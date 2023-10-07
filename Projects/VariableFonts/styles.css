@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Kyiv Sans";
+  src: url("KyivTypeSans-VarGX.woff2") format("woff2");
+  font-weight: 0 1000;
+  font-display: swap;
+}
+
+h1 {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.variable-font {
+  --font-weight: 1;
+  --font-midline: 0;
+  --font-contrast: 250;
+  font-family: "Kyiv Sans";
+  font-size: 5rem;
+  line-height: 1.1;
+  /* font-weight: 1; */
+  font-variation-settings: "wght" var(--font-weight),
+    "CONT" var(--font-contrast), "MIDL" var(--font-midline);
+  transition: font-variation-settings 500ms;
+}
+
+.variable-font:hover {
+  --font-weight: 1000;
+  --font-midline: -1000;
+  --font-contrast: 250;
+}
+
+/*
+How to differentiate between 'CUSTOM' axes & 'STANDARD' axis?
+
+If it's 'uppercase', then it's a 'CUSTOM' axes &
+if it's 'lowercase', it's a 'STANDARD' one.
+
+The ones that are custom axes we have 'NO'
+CSS property that can actually control
+that.
+*/

@@ -1,0 +1,46 @@
+.earth{
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.earth::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/1920px-Blue_Marble_2002.png);
+  background-size: cover;
+  box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
+  border-radius: 50%;
+  animation: 
+    spin 10s linear alternate forwards,
+    loader 10s forwards 2s;
+}
+
+.earth iframe{
+  border-radius: 50%;
+  animation: rotate 10s linear forwards;
+}
+
+@keyframes spin{
+  to{
+      background-position: 100%;
+      border-radius: 0;
+  }
+}
+
+@keyframes rotate{
+  to{
+      border-radius: 0;
+  }
+}
+
+@keyframes loader{
+  to{
+    opacity: 0;
+    z-index: -1;
+  }
+}
+

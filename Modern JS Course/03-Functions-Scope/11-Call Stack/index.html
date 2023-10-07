@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Stack</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header><h1>Call Stack</h1></header>
+    <main>
+      <p>
+        The call stack in JavaScript is a data structure that keeps track of the
+        functions that are currently being executed. It is a stack, which means
+        that it follows the Last In First Out (LIFO) principle. When a function
+        is called, it is pushed onto the call stack. When a function returns, it
+        is popped off the call stack.
+      </p>
+    </main>
+
+    <article>
+      <h2>First Scenario</h2>
+      <div class="flowchart">
+        <img src="Group 19.png" alt="" class="" />
+      </div>
+      <p>
+        In the provided code, you have three functions: first, second, and
+        third. You call these functions one after the other in a sequence:
+        first(), second(), and third(). Let's explain the call stack in the
+        context of this code:
+      </p>
+
+      <ul>
+        1)The program starts by calling the first function:
+        <li>The first function is pushed onto the call stack.</li>
+        <li>
+          Inside the first function, a console.log statement is executed,
+          printing "first..." to the console.
+        </li>
+        <li>
+          The first function completes its execution and is <em>removed</em> from the
+          call stack. <b>The call stack is now empty</b>.
+        </li>
+      </ul>
+
+      <ul>
+        2)Next, you call the second function:
+        <li>The second function is pushed onto the call stack.</li>
+        <li>
+          Inside the second function, a console.log statement is executed,
+          printing "second..." to the console.
+        </li>
+        <li>
+          The second function completes its execution and is <em>removed</em> from the
+          call stack. <b>The call stack is now empty again</b>.
+        </li>
+      </ul>
+
+      <ul>
+        3)Finally, you call the third function:
+        <li>The third function is pushed onto the call stack.</li>
+        <li>
+          Inside the third function, a console.log statement is executed,
+          printing "third..." to the console.
+        </li>
+        <li>
+          The third function completes its execution and is <em>removed</em> from the
+          call stack. <b>The call stack is now empty one more time</b>.
+        </li>
+      </ul>
+
+      <p>In this example, the call stack remains empty after each function completes because the functions are called sequentially, one after the other, and each function finishes its execution before the next one is called. The call stack keeps track of the function calls and their order of execution, but in this case, there is no nesting or overlapping of function calls, so the stack remains straightforward and linear.</p>
+    </article>
+
+    <article class="secondArticle">
+      <h2>Second Scenario</h2>
+      <div class="flowchart">
+        <img src="Group 20.png" alt="" class="secondExample" />
+      </div>
+      <p>
+        The code consists of three functions: first, second, and third, and
+        there's an initial call to the first function. We'll walk through the
+        code execution step by step:
+      </p>
+
+      <ul>
+        1)The program starts by calling the first function:
+        <li>The first function is pushed onto the call stack.</li>
+        <li>
+          Inside the first function, a console.log statement is executed,
+          printing "first..." to the console.
+        </li>
+        <li>
+          Then, the second function is called from within the first function.
+        </li>
+      </ul>
+
+      <p>At this point, the call stack looks like this:</p>
+      <pre>
+        <code>
+          - second
+          - first
+        </code>
+      </pre>
+
+      <ul>
+        2)The second function is now executing:
+        <li>The second function is pushed onto the call stack.</li>
+        <li>
+          Inside the second function, a console.log statement is executed,
+          printing "second..." to the console.
+        </li>
+        <li>
+          Then, the third function is called from within the second function.
+        </li>
+      </ul>
+
+      <p>The call stack now looks like this:</p>
+      <pre>
+        <code>
+          - third
+          - second
+          - first
+        </code>
+      </pre>
+
+      <ul>
+        3)The third function is executed:
+        <li>The third function is pushed onto the call stack.</li>
+        <li>
+          Inside the third function, a console.log statement is executed,
+          printing "third..." to the console.
+        </li>
+      </ul>
+      <p>The call stack now looks like this</p>
+      <pre>
+        <code>
+          - third
+          - second
+          - first
+        </code>
+      </pre>
+
+      <p>
+        4)The third function completes its execution and is removed from the
+        call stack. The call stack now looks like this:
+      </p>
+      <pre>
+        <code>
+          - second
+          - first
+        </code>
+      </pre>
+
+      <p>
+        5)The second function completes its execution and is removed from the
+        call stack. The call stack now looks like this:
+      </p>
+      <pre>
+        <code>
+          - first
+        </code>
+      </pre>
+
+      <p>
+        6)The first function completes its execution and is removed from the
+        call stack. The call stack is now empty.
+      </p>
+      <br />
+      <p>
+        As you can see, the call stack keeps track of the function calls and
+        their order of execution. It follows the Last-In, First-Out (LIFO)
+        principle, meaning that the most recently called function is the first
+        one to complete and be removed from the stack. In this example, the
+        functions are called in a nested manner, creating a call stack that
+        reflects the execution flow.
+      </p>
+    </article>
+    <script src="script.js"></script>
+  </body>
+</html>

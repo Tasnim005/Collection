@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 90%;
+    margin: auto;
+}
+
+h1{
+    font-size: 2.5rem;
+    color: orangered;
+    margin-bottom: 1.2rem;
+}
+
+div{
+    outline: 1px solid red;
+    font-size: 1.5rem;
+    padding: 1rem;
+
+}
+/* Flexbox Vs Grid */
+/* Flexbox does its flex thing and we get a bunch of columns they're sort of RESPONSIVE, they squish they grow a little bit.Every direct child will become a column even if that means there'll be some OVERFLOW and that means we can get some *horizontal scroll* with flexbox */
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    outline: none;
+}
+/* IN the flex container, this column here is not looking at anything above it or anything below it this row is independent from the row above it it's independent from the row below it */
+
+/* to make more changes to the flex stuff we actually have to come to the children */
+
+/* Intrinsic sizing mean how this item is shrunk down to be as small as the content inside of it in flexbox. */
+
+.flex-container > * {
+    flex-grow: 1; 
+    /*now look they're always filling up all their available space*/
+    flex-basis: 33%; 
+    /*that's going to give us three columns but then this last one's allowed to grow so it breaks bigger*/
+}
+
+.grid-container{
+    outline: none;
+    display: grid; 
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/*column is stretching to match the other columns around it in grid*/
+/* grid is just this structured thing it's really relying on what the parent is telling it to do and the children are living within the grid that is being created */
+
+/* When to use FLEXBOX: working with intrinsic sizing. e.g. navbar*/
+
+/* When to use GRID: one place that grid really excels is when we want more of a rigid system from the parent so let's say we want equal columns here */
