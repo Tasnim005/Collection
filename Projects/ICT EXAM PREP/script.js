@@ -10,7 +10,6 @@ function LCM(num1, num2){
 
 console.log(LCM(57, 5))
 
-
 function multiplication (num1= 10, num2=7){
     return num1*num2
 }
