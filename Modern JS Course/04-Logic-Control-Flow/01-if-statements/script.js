@@ -12,4 +12,39 @@ const options = {
 const typed = new Typed(element, options);
 
 // Lesson starts from here
-// lorem
+if (true) {
+    console.log('This is true');
+
+}
+
+if (false) {
+    console.log('This is not true'); //This line of code won't run because it's false
+}
+
+const x = 10
+const y = 5
+
+if (x > y) {
+    console.log(`${x} is greater than ${y}`);
+}
+
+if (x === y) {
+    console.log(`${x} is equal to ${y}`);
+} else{
+    console.log(`${x} is not equal to ${y}`)
+}
+
+if(x!==y){
+    // const z =20
+    // let z =20
+    var z =20
+    console.log('${z} is 20');
+}
+
+console.log(z); //This won't work with const z and let z
+
+// Shorthand If
+if (x >= y) console.log(`${x} is greater than or equal to ${y}`),
+    console.log('This is true');
+    
+else console.log('This is false');
