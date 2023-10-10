@@ -1,5 +1,5 @@
 const element = document.getElementById('typewriter');
-const stringsToAnimate = ["Let's get started with", "Logical-Operator"];
+const stringsToAnimate = ["Let's get started with", "Ternary Operator"];
 
 const options = {
     strings: stringsToAnimate,

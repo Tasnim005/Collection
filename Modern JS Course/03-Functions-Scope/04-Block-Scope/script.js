@@ -32,7 +32,7 @@ if(true){
 }
 
 // console.log(a) //error
-// console.log(b) //error
+// console.log(b) //error because let is block scoped
 console.log(c) // works because var acts like a global scope when it comes to loops and if statements
 
 function run(){
