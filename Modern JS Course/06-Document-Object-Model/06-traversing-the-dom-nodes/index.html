@@ -11,6 +11,7 @@
     <div class="container">
       <h1>Traversing The DOM</h1>
       <div class="parent">
+        <!-- Children -->
         <div class="child">Child 1</div>
         <div class="child">Child 2</div>
         <div class="child">Child 3</div>
@@ -18,32 +19,32 @@
     </div>
     <table cellspacing="0">
       <tbody><tr>
-      <th style="width:30%">Node Type</th>
-      <th style="width:40%">Description</th>
+      <th >Node Type</th>
+      <th >Description</th>
       <th>Children</th>
       </tr>
       <tr>
         <td>Document</td>
         <td>Represents the entire document (the root-node of the DOM tree)</td>
-        <td>Element (max. one), ProcessingInstruction, Comment, DocumentType</td>
+        <td>Element (max. one), Processing Instruction, Comment, Document Type</td>
       </tr>
       <tr>
-        <td>DocumentFragment</td>
+        <td>Document Fragment</td>
         <td>Represents a "lightweight" Document object, which can hold a portion of a document</td>
-        <td>Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference</td>
+        <td>Element, Processing Instruction, Comment, Text, CDATA Section, Entity Reference</td>
       </tr>
       <tr>
-        <td>DocumentType</td>
+        <td>Document Type</td>
         <td>Provides an interface to the entities defined for the document</td>
         <td>None</td>
       </tr>
       <tr>
-        <td>ProcessingInstruction</td>
+        <td>Processing Instruction</td>
         <td>Represents a processing instruction</td>
         <td>None</td>
       </tr>
       <tr>
-        <td>EntityReference</td>
+        <td>Entity Reference</td>
         <td>Represents an entity reference</td>
         <td>Element, ProcessingInstruction, Comment, Text, CDATASection, EntityReference</td>
       </tr>
@@ -55,7 +56,7 @@
       <tr>
         <td>Attr</td>
         <td>Represents an attribute</td>
-        <td>Text, EntityReference</td>
+        <td>Text, Entity Reference</td>
       </tr>
       <tr>
         <td>Text</td>
@@ -63,7 +64,7 @@
         <td>None</td>
       </tr>
       <tr>
-        <td>CDATASection</td>
+        <td>CDATA Section</td>
         <td>Represents a CDATA section in a document (text that will NOT be parsed by a parser)</td>
         <td>None</td>
       </tr>
