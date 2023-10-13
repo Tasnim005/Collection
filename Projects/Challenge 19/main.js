@@ -1,57 +1,35 @@
-// const arrow = document.querySelector(".arrow");
+const arrow = document.querySelector('.arrow')
+console.log(arrow);
 
-// const currentDate = new Date();
-// const currentDay = currentDate.getDate();
-// const currentMonth = currentDate.getMonth() + 1;
-// const currentYear = currentDate.getFullYear();
+arrow.addEventListener('click', calculate)
 
-// arrow.addEventListener("click", calculateAge);
-// function validateInput(input, characterLimit, maxValue, fieldName) {
-//   const regex = /^\d+$/g;
-//   const period = /^\.$/g
+function calculate() {
+    const inputDay = document.querySelector('#inputDay').value
+    const inputMonth = document.querySelector('#inputMonth').value
+    const inputYear = document.querySelector('#inputYear').value
 
-//   if (input.length > characterLimit || input > maxValue || !regex.test(input) || period.test(input) == true) {
-//     console.log(`Invalid ${fieldName} input`);
-//     return false;
-//   }
-
-//   return true;
-// }
+    const outputYear = document.querySelector('#outputYear')
+    const outputMonth = document.querySelector('#outputMonth')
+    const outputDay = document.querySelector('#outputDay')
 
 
-// function calculateAge() {
-//   const inputDay = document.getElementById("day").value;
-//   const inputMonth = document.getElementById("month").value;
-//   const inputYear = document.getElementById("year").value;
+    // Validation
+    const inputDate = `${inputYear}-${inputMonth}-${inputDay}`
+    const isValidDate = moment(inputDate).isValid();
 
-//   const outputDay = document.querySelector('.output.day')
-//   const outputMonth = document.querySelector('.output.month')
-//   const outputYear = document.querySelector('.output.year')
+    if(inputDay.length===2 && inputMonth.length===2 && inputYear.length===4 && isValidDate === true){
+        calculateAge()
+    }else{
+        console.log('error');
+    }
 
-//   if (
-//     !validateInput(inputDay, 2, 31, 'day') ||
-//     !validateInput(inputMonth, 2, 12, 'month') ||
-//     !validateInput(inputYear, 4, currentYear, 'year')
-//   ) {
-//     return;
-//   }
-
-//   // return; statement is used to prevent further execution of the function when an invalid day input is detected. When the day input is invalid, it means the user entered an incorrect day value (e.g., greater than 31 or not a number). If we allow the function to continue executing with an invalid input, the age calculation would be incorrect and potentially misleading.
-
-//   outputDay.innerHTML = currentDay - inputDay
-//   outputMonth.innerHTML = currentMonth - inputMonth
-//   outputYear.innerHTML = currentYear - inputYear
-// }
-
-
-var now = moment();
-console.log(now)
-
-function calculateAge(dateOfBirth) {
-  const currentDate = moment();
-  const age = currentDate.diff(dateOfBirth, 'years');
-  return age;
+    // Calculate age
+    function calculateAge(){
+        outputYear.textContent = moment().diff(inputDate, 'years')
+        outputMonth.textContent = (moment().diff(inputDate, 'months'))%12
+        outputDay.textContent = (moment().diff(inputDate, 'days'))%30
+    }
+    
 }
 
-const age = calculateAge(moment('2003-03-23'));
-console.log(age)
+

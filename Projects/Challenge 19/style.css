@@ -76,12 +76,14 @@ input::placeholder {
   font-weight: 700;
 }
 
-input:hover {
+input:hover,
+input:focus {
   cursor: pointer;
+  border: 1px solid var(--Purple);
 }
 
-input:focus {
-  outline: 1px solid var(--Smokey-grey);
+input:focus{
+  outline: none;
 }
 
 .design {
