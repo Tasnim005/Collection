@@ -1,23 +1,108 @@
-/* Style for loading screen */
-.loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+
+:root {
+  --primary: #fff;
+  --secondary: #f7f8f9;
+  --quoteText: #272727;
+  --referenceText: #35373e;
+  --logo: #5c60e1;
 }
 
-/* Style to hide the main content initially */
-.hidden {
-    display: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style for loading screen */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
 /* Opening SVG */
-.opening{
-    color: black;
+.opening {
+  color: var(--logo);
+}
+
+nav {
+  width: 100%;
+  height: 12vh;
+  background: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+}
+
+.logo svg {
+  color: var(--logo);
+  width: 150px;
+}
+
+.themeSwitch {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.themeSwitch svg {
+  color: var(--logo);
+}
+
+.container {
+  padding: 3rem;
+}
+
+.textContainer {
+  text-align: center;
+}
+
+.container:nth-child(odd) {
+  background: var(--primary);
+}
+.container:nth-child(even) {
+  background: var(--secondary);
+}
+
+.quote {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  color: var(--quoteText);
+  margin-bottom: 0.8rem;
+}
+
+.reference {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--referenceText);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.reference:hover {
+  letter-spacing: 2px;
+  color: var(--logo);
+}
+
+.darkmode {
+  --primary: #272727;
+  --secondary: #35373e;
+  --quoteText: #fff;
+  --referenceText: #f7f8f9;
+  --logo: #5c60e1;
 }

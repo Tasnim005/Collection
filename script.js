@@ -25,32 +25,3 @@ paths.forEach((path)=>{
 });
 })
 
-
-// Google Search
-const references = document.querySelectorAll('.reference')
-
-references.forEach((item) => {
-  const searchString = item.innerText
-
-  item.addEventListener('click', openNewPage)
-
-  function openNewPage() {
-    // Encode the text for a Google search URL
-    const encodedText = encodeURIComponent(searchString);
-
-    // Create a Google search URL
-    const googleSearchURL = `https://www.google.com/search?q=${encodedText}`;
-
-    // Open the URL in a new tab
-    window.open(googleSearchURL, '_blank');
-  }
-})
-
-// Dark Mode
-const themeSwitch = document.querySelector('.themeSwitch')
-
-themeSwitch.addEventListener('click', changeTheme)
-
-function changeTheme(){
-  document.body.classList.toggle('darkmode')
-}
