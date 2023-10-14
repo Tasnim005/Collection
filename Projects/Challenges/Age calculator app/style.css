@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap");
 
 * {
   margin: 0;
@@ -22,14 +22,15 @@ body {
   font-family: "Poppins", sans-serif;
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  width: 100%;
 }
 
 main {
-  width: 50%;
+  width: 45%;
   background: var(--White);
   padding: 2rem;
   border-radius: 1rem 1rem 8rem 1rem;
+  margin-block: 3.5rem;
 }
 
 .wrapper {
@@ -57,7 +58,7 @@ input {
   color: var(--Off-black);
   font-weight: 800;
   font-size: 1.4rem;
-  width: 75%;
+  width: 100%;
   padding: 0.5rem 0.8rem;
   border: 1px solid var(--Off-white);
   border-radius: 5px;
@@ -82,13 +83,22 @@ input:focus {
   border: 1px solid var(--Purple);
 }
 
-input:focus{
+input:focus {
   outline: none;
+}
+
+.errorMessage {
+  color: var(--Light-red);
+  font-size: 10px;
+  font-style: italic;
+  margin-top: 5px;
+  display: none;
 }
 
 .design {
   display: flex;
   justify-content: right;
+  font-style: italic;
 }
 
 .arrow {
@@ -124,6 +134,7 @@ span {
 footer {
   width: 90%;
   margin-inline: auto;
+  margin-bottom: 1rem;
 }
 .attribution {
   color: var(--Smokey-grey);
@@ -137,19 +148,19 @@ footer {
 
 @media (max-width: 1200px) {
   main {
-    width: 60%;
+    width: 50%;
   }
 }
 
 @media (max-width: 1000px) {
   main {
-    width: 65%;
+    width: 60%;
   }
 }
 
 @media (max-width: 900px) {
   main {
-    width: 70%;
+    width: 55%;
   }
 
   .wrapper {
@@ -167,8 +178,25 @@ footer {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
+  main {
+    width: 70%;
+  }
+}
+
+@media (max-width: 550px) {
   main {
     width: 85%;
   }
+}
+
+@media (max-width: 450px) {
+  main {
+    width: 95%;
+  }
+
+  .wrapper {
+    gap: 0.7rem;
+  }
+
 }
