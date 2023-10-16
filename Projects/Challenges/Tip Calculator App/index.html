@@ -15,52 +15,58 @@
     <main>
       <section class="inputSection">
         <div class="bill">
-          <p>Bill</p>
-          <input type="number" name="bill" id="bill" class="longField" />
+          <div class="inputField">
+            <p>Bill</p>
+            <p class="errorMessage">Can't be Zero</p>
+          </div>
+          <input type="number" id="bill" class="longField" />
         </div>
 
         <div class="tipSelection">
           <p>Select Tip %</p>
 
           <div class="wrapper">
-            <button class="tipPercent">5%</button>
-            <button class="tipPercent">10%</button>
-            <button class="tipPercent">15%</button>
-            <button class="tipPercent">25%</button>
-            <button class="tipPercent">50%</button>
-            <input type="number" id="custom" placeholder="Custom">
+            <button class="tipPercent"><span class="percent">5</span>%</button>
+            <button class="tipPercent"><span class="percent">10</span>%</button>
+            <button class="tipPercent"><span class="percent">15</span>%</button>
+            <button class="tipPercent"><span class="percent">25</span>%</button>
+            <button class="tipPercent"><span class="percent">50</span>%</button>
+            <input type="number" id="custom" placeholder="Custom" />
           </div>
         </div>
 
         <div class="people">
-          <p>Number of People</p>
-          <input type="number" name="people" id="people" class="longField" />
+          <div class="inputField">
+            <p>Number of People</p>
+            <p class="errorMessage">Can't be Zero</p>
+          </div>
+          <input type="number" id="people" class="longField" />
         </div>
       </section>
 
       <section class="outputSection">
-          <div class="container">
-            <div class="tip">
-              <div class="text">
-                <p class="title">Tip Amount</p>
-                <p>/ person</p>
-              </div>
-
-              <div class="result">
-                <h1>$0.00</h1>
-              </div>
+        <div class="container">
+          <div class="tip">
+            <div class="text">
+              <p class="title">Tip Amount</p>
+              <p>/ person</p>
             </div>
 
-            <div class="tip">
-              <div class="text">
-                <p class="title">Total</p>
-                <p>/ person</p>
-              </div>
-
-              <div class="result">
-                <h1>$0.00</h1>
-              </div>
+            <div class="result">
+              <h1 id="tipAmount">$0.00</h1>
             </div>
+          </div>
+
+          <div class="tip">
+            <div class="text">
+              <p class="title">Total</p>
+              <p>/ person</p>
+            </div>
+
+            <div class="result">
+              <h1 id="totalAmount">$0.00</h1>
+            </div>
+          </div>
           <input type="submit" value="RESET" />
         </div>
       </section>
@@ -77,4 +83,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-

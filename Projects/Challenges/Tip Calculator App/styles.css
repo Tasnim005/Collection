@@ -75,6 +75,18 @@ input[type="number"]:focus {
   outline: none;
 }
 
+.inputField{
+  display: flex;
+  justify-content: space-between;
+}
+
+.errorMessage{
+  color: #f18181;
+  font-size: 0.9rem;
+  display: none;
+}
+
+
 .longField {
   background: url(images/icon-dollar.svg), var(--Very-light-grayish-cyan);
   background-repeat: no-repeat;
