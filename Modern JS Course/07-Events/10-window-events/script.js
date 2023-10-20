@@ -1,22 +1,41 @@
-const listItems = document.querySelectorAll('li')
+// window.onload = ()=>{
+//   document.querySelector('h1').textContent = 'Hello World'
+// }
 
-// Add an event listener on all items
-// listItems.forEach((item)=>{
-//     item.addEventListener('click', (e)=>{
-//         e.target.remove()
-//     })
-// })
+window.addEventListener('load', ()=> console.log('Page Loaded'))
 
-// Add a single event listener on the parent (Event Delegation)
-const list = document.querySelector('ul')
-list.addEventListener('click', (e) => {
-    if (e.target.tagName === 'LI') {
-      e.target.remove();
-    }
-  });
+window.addEventListener('DOMContentLoaded', ()=> console.log('DOM Loaded'))
+
+console.log('Run me');
+
+
+
+window.addEventListener('resize', ()=>{
+  document.querySelector('h1').textContent = `Resized to ${window.innerWidth} x ${window.innerHeight}`
+})
+
+// Dynamic effects
+window.addEventListener('scroll', ()=>{
+  console.log(`Scrolled: ${window.scrollX} x ${window.scrollY}`);
   
-  list.addEventListener('mouseover', (e) => {
-    if (e.target.tagName === 'LI') {
-      e.target.style.color = 'red';
-    }
-  });
+  if(window.scrollY >70){
+    document.body.style.backgroundColor = 'black'
+    document.body.style.color = 'white'
+  } else{
+    document.body.style.backgroundColor = 'white'
+    document.body.style.color = 'black'
+  }
+})
+
+
+window.addEventListener('focus', ()=>{
+  document.querySelectorAll('p').forEach((item)=>{
+    item.style.color = 'blue'
+  })
+})
+
+window.addEventListener('blur', ()=>{
+  document.querySelectorAll('p').forEach((item)=>{
+    item.style.color = 'black'
+  })
+})
