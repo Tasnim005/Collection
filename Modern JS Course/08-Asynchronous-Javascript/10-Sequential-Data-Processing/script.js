@@ -49,12 +49,12 @@ async function fetchData(url) {
     }
 }
 
-function populateHTML(populate, cl) {
+function populateHTML(populate, cls) {
     const main = document.querySelector('main')
     const div = document.createElement('div');
     const p = document.createElement('p');
     const textNode = document.createTextNode(populate);
-    p.classList = cl
+    p.classList = cls
 
     p.append(textNode); 
     div.append(p); 
@@ -63,7 +63,6 @@ function populateHTML(populate, cl) {
 
 async function populateUserName() {
     const users = await fetchData('https://jsonplaceholder.typicode.com/users')
-    console.log(users)
 
     for(const user of users){
         populateHTML(user.name, 'name')
@@ -72,8 +71,7 @@ async function populateUserName() {
 
 async function populateUserPost() {
     const posts = await fetchData('https://jsonplaceholder.typicode.com/posts')
-    
-    
+
     for(const post of posts){
         populateHTML(post.body, 'post')
     }
@@ -81,3 +79,4 @@ async function populateUserPost() {
 
 populateUserName()
 populateUserPost()
+
