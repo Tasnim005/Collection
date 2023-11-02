@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/T.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/T.svg" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,60 +13,62 @@
   </head>
   <body>
     <main>
-      <section>
+      <section class="search">
         <input type="text" id="inputLocation" placeholder="Enter Location" />
         <button>Search</button>
       </section>
 
-      <div class="overview">
-        <video src="images/clouds.mp4" muted loop autoplay></video>
+      <video src="assets/videos/rain.mp4" muted loop autoplay></video>
 
+      <section class="overview">
         <div class="currentLocation">
           <div class="cityWrapper">
             <span class="material-symbols-outlined"> location_on </span>
-            <p id="city"></p>
+            <p id="city">Dhaka</p>
           </div>
 
           <p id="time"></p>
         </div>
         <div class="weatherInfo">
           <img src="" alt="" id="weatherIcon" />
-          <p id="condition"></p>
+          <p id="condition">Sunny</p>
 
-          <h1 id="currentTemperature"></h1>
-          <p id="feelsLike"></p>
+          <h1 id="currentTemperature">28°C</h1>
+          <p id="feelsLike">Feels like 29.5°C</p>
         </div>
 
         <div class="parameters">
           <div class="wrapper">
             <span class="material-symbols-outlined"> air </span>
-            <p class="parameter" id="wind"></p>
+            <p class="parameter" id="wind">NNW 11.2km/h</p>
             <p class="subtitle">Wind</p>
           </div>
 
           <div class="wrapper">
             <span class="material-symbols-outlined"> rainy </span>
-            <p class="parameter" id="chanceOfRain"></p>
-            <p class="subtitle">Rain</p>
+            <p class="parameter" id="chanceOfRain">5%</p>
+            <p class="subtitle">Rain Chance</p>
           </div>
 
           <div class="wrapper">
             <span class="material-symbols-outlined"> humidity_percentage </span>
-            <p class="parameter" id="humidity"></p>
+            <p class="parameter" id="humidity">58%</p>
             <p class="subtitle">Humidity</p>
           </div>
 
           <div class="wrapper">
             <span class="material-symbols-outlined"> light_mode </span>
-            <p class="parameter" id="uv"></p>
+            <p class="parameter" id="uv">6</p>
             <p class="subtitle">UV</p>
           </div>
         </div>
-      </div>
 
-      <!-- <div class="forecast">
 
-        </div> -->
+      </section>
+
+      <section class="forecast">
+       <!-- Code will be injected from JS file -->
+      </section>
     </main>
     <script src="script.js"></script>
   </body>

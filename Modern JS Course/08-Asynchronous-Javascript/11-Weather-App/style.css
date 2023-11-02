@@ -12,6 +12,7 @@ body {
   place-items: center;
   width: 100%;
   min-height: 100vh;
+  color: #fff;
 }
 
 h1{
@@ -24,9 +25,57 @@ p{
     font-size: 0.9rem;
 }
 
+.search{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+input{
+  padding: 1rem;
+  background: none;
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: 0.5rem;
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+input::placeholder{
+  color: white;
+}
+
+input:focus{
+  outline: none;
+}
+
+button{
+  padding: 0.6rem 1.6rem;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.19);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+
+button:hover,
+button:focus{
+  background: #166ee0;
+}
+
 main {
-  outline: 1px solid violet;
+  position: relative;
   width: 70%;
+  padding: 2rem;
+  margin-block: 2rem;
 }
 
 .cityWrapper{
@@ -34,12 +83,7 @@ main {
     align-items: center;
 }
 
-.overview {
-  position: relative;
-  padding: 2rem;
-}
-
-.overview video {
+video {
   position: absolute;
   top: 0;
   left: 0;
@@ -47,12 +91,8 @@ main {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  border-radius: 1rem;
 }
-
-/* .overlay{
-    position: absolute;
-
-} */
 
 .currentLocation {
   display: flex;
@@ -64,8 +104,12 @@ main {
 }
 
 .parameters {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1.5rem;
   padding: 2rem;
   margin-top: 2rem;
   /* Glassmorphism */
@@ -87,5 +131,54 @@ main {
 
 .subtitle{
     font-size: 0.7rem;
-    color: #555555;
+    color: #f1f1f1;
+}
+
+.forecast{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.forecastByHour{
+  text-align: center;
+  padding: 1.7rem 0.8rem;
+  border: 1px solid white;
+  border-radius: 3rem;
+}
+
+.forecastByHour:nth-of-type(1){
+  background: #166ee0;
+  border: none;
+}
+
+.forecastByHour img{
+  width: 40px;
+  height: 40px;
+}
+
+.forecastByHour .subtitle{
+  margin-block: 0.2rem 0.4rem;
+}
+
+
+
+@media(max-width: 1000px){
+  main{
+    width: 85%;
+  }  
+}
+
+@media(max-width: 800px){
+  main{
+    width: 90%;
+  }
+
+}
+
+@media(max-width: 500px){
+  main{
+    width: 95%;
+  }
 }
