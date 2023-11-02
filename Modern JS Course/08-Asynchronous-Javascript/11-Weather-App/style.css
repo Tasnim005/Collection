@@ -174,7 +174,14 @@ video {
   main{
     width: 90%;
   }
+}
 
+@media(max-width: 650px){
+.forecast{
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 }
 
 @media(max-width: 500px){
