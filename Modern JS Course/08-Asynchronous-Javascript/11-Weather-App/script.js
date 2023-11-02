@@ -55,6 +55,33 @@ async function getWeatherData() {
     humidity.textContent = `${fetchWeatherData.current.humidity}%`;
     uv.textContent = fetchWeatherData.current.uv;
 
+    // Update Background
+    const video = document.querySelector('video')
+    const weatherCode = fetchWeatherData.current.condition.code
+    const checkDay = fetchWeatherData.current.is_day
+
+    if (weatherCode === 1000 && checkDay === 1) {
+        video.setAttribute('src', 'assets/videos/sunny.mp4')
+    } else if (weatherCode === 1000 || weatherCode === 1003 || weatherCode === 1006 && checkDay === 0) {
+        video.setAttribute('src', 'assets/videos/night.mp4')
+    } else if (weatherCode === 1003 || weatherCode === 1006 && checkDay === 1) {
+        video.setAttribute('src', 'assets/videos/cloud.mp4')
+    } else if (weatherCode === 1009 || weatherCode === 1063) {
+        video.setAttribute('src', 'assets/videos/overcast.mp4')
+
+    } else if (weatherCode === 1150 || weatherCode === 1153 || weatherCode === 1180 || weatherCode === 1183 || weatherCode === 1186 || weatherCode === 1189 || weatherCode === 1192 || weatherCode === 1195 || weatherCode === 1198 || weatherCode === 1201 || weatherCode === 1240 || weatherCode === 1243 || weatherCode === 1246) {
+        video.setAttribute('src', 'assets/videos/rain.mp4')
+    } else if (weatherCode === 1087 || weatherCode === 1273 || weatherCode === 1276 || weatherCode === 1279 || weatherCode === 1282) {
+        video.setAttribute('src', 'assets/videos/thunderstorm.mp4')
+    } else if (weatherCode === 1030 || weatherCode === 1066 || weatherCode === 1069 || weatherCode === 1135 || weatherCode === 1147) {
+        video.setAttribute('src', 'assets/videos/fog.mp4')
+    } else if (weatherCode === 1072 || weatherCode === 1114 || weatherCode === 1117 || weatherCode === 1168 || weatherCode === 1171 || weatherCode === 1204 || weatherCode === 1207 || weatherCode === 1210 || weatherCode === 1213 || weatherCode === 1216 || weatherCode === 1219 || weatherCode === 1222 || weatherCode === 1225 || weatherCode === 1237 || weatherCode === 1249 || weatherCode === 1252 || weatherCode === 1255 || weatherCode === 1258 || weatherCode === 1261 || weatherCode === 1264) {
+        video.setAttribute('src', 'assets/videos/snow.mp4')
+    } else {
+        video.setAttribute('src', 'assets/videos/sunny.mp4')
+    }
+
+
     // Weather Forecast
     const timeStamp = new Date(fetchWeatherData.location.localtime)
     const currentHour = timeStamp.getHours()
@@ -95,9 +122,3 @@ async function getWeatherData() {
 }
 
 button.addEventListener('click', getWeatherData)
-
-
-/*
-
-
-*/
