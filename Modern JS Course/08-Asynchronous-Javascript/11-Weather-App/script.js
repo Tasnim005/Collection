@@ -9,7 +9,9 @@ const condition = document.querySelector('#condition')
 const currentTemperature = document.querySelector('#currentTemperature')
 const feelsLike = document.querySelector('#feelsLike')
 const wind = document.querySelector('#wind')
+const chanceOfRain = document.querySelector('#chanceOfRain')
 const humidity = document.querySelector('#humidity')
+const uv = document.querySelector('#uv')
 const weatherIcon = document.querySelector('#weatherIcon')
 
 const apiKey = 'bcc60dbb9f9848f3b02142620232610'
@@ -40,17 +42,22 @@ async function getWeatherData() {
     const getWeatherIconURL = fetchWeatherData.current.condition.icon
 
     // Upadate UI with weather data
+    weatherIcon.setAttribute('src', getWeatherIconURL)
+
     city.textContent = fetchWeatherData.location.name
     time.textContent = fetchWeatherData.location.localtime
     condition.textContent = fetchWeatherData.current.condition.text;
     currentTemperature.textContent = fetchWeatherData.current.temp_c
     feelsLike.textContent = `Feels like ${fetchWeatherData.current.feelslike_c} °C`;
-    humidity.textContent = `Humidity: ${fetchWeatherData.current.humidity}`;
-    wind.textContent = `Wind: ${fetchWeatherData.current.wind_dir} ${fetchWeatherData.current.wind_kph}km/h`;
-    weatherIcon.setAttribute('src', getWeatherIconURL)
+
+    wind.textContent = `${fetchWeatherData.current.wind_dir} ${fetchWeatherData.current.wind_kph}km/h`;
+    chanceOfRain.textContent = `${forecastData.forecast.forecastday[0].day.daily_chance_of_rain}%`
+    humidity.textContent = `${fetchWeatherData.current.humidity}%`;
+    uv.textContent = fetchWeatherData.current.uv;
 
     console.log(fetchWeatherData)
     console.log(forecastData)
+    console.log()
 }
 
 button.addEventListener('click', getWeatherData)

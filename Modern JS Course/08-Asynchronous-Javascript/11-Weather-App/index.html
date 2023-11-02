@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <section>
-        <input type="text" id="inputLocation" placeholder="Enter Location">
-        <button>Search</button>
-    </section>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/T.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
     <main>
-        <div class="overview">
-            <div class="currentLocation">
-                <p id="city"></p>
-                <p id="time"></p>
-            </div>
-            <div class="weatherInfo">
-                <p id="condition"></p>
-                <h1 id="currentTemperature"></h1>
-                <p id="feelsLike"></p>
-            </div>
-            <div class="otherParameters">
-                <p id="humidity"></p>
-                <p id="wind"></p>
-            </div>
-            <img src="" alt="" id="weatherIcon">
+      <section>
+        <input type="text" id="inputLocation" placeholder="Enter Location" />
+        <button>Search</button>
+      </section>
+
+      <div class="overview">
+        <video src="images/clouds.mp4" muted loop autoplay></video>
+
+        <div class="currentLocation">
+          <div class="cityWrapper">
+            <span class="material-symbols-outlined"> location_on </span>
+            <p id="city"></p>
+          </div>
+
+          <p id="time"></p>
+        </div>
+        <div class="weatherInfo">
+          <img src="" alt="" id="weatherIcon" />
+          <p id="condition"></p>
+
+          <h1 id="currentTemperature"></h1>
+          <p id="feelsLike"></p>
         </div>
 
-        <!-- <div class="forecast">
+        <div class="parameters">
+          <div class="wrapper">
+            <span class="material-symbols-outlined"> air </span>
+            <p class="parameter" id="wind"></p>
+            <p class="subtitle">Wind</p>
+          </div>
+
+          <div class="wrapper">
+            <span class="material-symbols-outlined"> rainy </span>
+            <p class="parameter" id="chanceOfRain"></p>
+            <p class="subtitle">Rain</p>
+          </div>
+
+          <div class="wrapper">
+            <span class="material-symbols-outlined"> humidity_percentage </span>
+            <p class="parameter" id="humidity"></p>
+            <p class="subtitle">Humidity</p>
+          </div>
+
+          <div class="wrapper">
+            <span class="material-symbols-outlined"> light_mode </span>
+            <p class="parameter" id="uv"></p>
+            <p class="subtitle">UV</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="forecast">
 
         </div> -->
     </main>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
