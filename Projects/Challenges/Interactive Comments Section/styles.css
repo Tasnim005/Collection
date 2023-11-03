@@ -40,7 +40,7 @@ p {
 
 main {
   width: 60%;
-  outline: 1px solid var(--Soft-Red);
+  /* outline: 1px solid var(--Soft-Red); */
   margin: 4rem auto;
 }
 
@@ -98,6 +98,18 @@ main {
   margin-left: 5px;
 }
 
+.editBtn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.editBtn p {
+  color: var(--Moderate-blue);
+  font-weight: 500;
+  margin-left: 5px;
+}
+
 .createComment {
   width: 100%;
   display: flex;
@@ -117,7 +129,7 @@ textarea {
   color: var(--Grayish-Blue);
 }
 
-.createComment input[type="submit"] {
+.cta {
   background: var(--Moderate-blue);
   color: var(--White);
   padding: 0.6rem 1.3rem;
@@ -125,85 +137,20 @@ textarea {
   border-radius: 5px;
   font-weight: 500;
   letter-spacing: 1px;
+  text-transform: uppercase;
   height: 2.5rem;
 }
 
-/* .comment{
-    width: 100%;
-    background: var(--White);
-    display: flex;
-    margin-bottom: 1.5rem;
-    padding: 2rem;
-}
-
-.rating{
-    background: var(--Light-gray);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 1rem;
-}
-
-.wrapper{
-    outline: 1px solid greenyellow;
-}
-
-.wrapper .commentInfo{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    outline: 1px solid blue;
-
-}
-
-.options{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.options img{
-    width: 15px;
-    height: 15px;
-    margin-inline: 0.5rem;
-}
-
-.btn{
-    display: flex;
-}
-
-.comment.create{
-    display: flex;
-    justify-content: space-around;
-}
-
-
-
-.user{
-    display: flex;
-    align-items: center;
-}
-
-.user img{
-    width: 30px;
-    height: 30px;
-}
-
-
-
-
-
 .modal{
-    position: absolute;
-    background: var(--White);
-    padding: 2rem;
-    top: 0;
-    left: 0;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 50%;
-    display: none;
-} */
+  position: absolute;
+  background: var(--White);
+  padding: 2rem;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 50%;
+  display: none;
+} 

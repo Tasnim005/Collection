@@ -46,18 +46,18 @@ function createNewComment() {
 
   // Counter
   const counter = document.createElement('div')
-  counter.classList= 'counter'
+  counter.classList = 'counter'
 
   const upvote = document.createElement('img')
   upvote.setAttribute('src', 'images/icon-plus.svg')
   upvote.classList = 'votes'
-  
+
   const downvote = document.createElement('img')
   downvote.setAttribute('src', 'images/icon-minus.svg')
   downvote.classList = 'votes'
 
   const rating = document.createElement('p')
-  rating.textContent=0
+  rating.textContent = 0
   rating.style.color = 'var(--Moderate-blue)'
   rating.style.fontWeight = '500';
   rating.style.marginBlock = '1rem'
@@ -68,18 +68,17 @@ function createNewComment() {
 
   let score = 0
 
-  upvote.addEventListener('click', ()=>{
+  upvote.addEventListener('click', () => {
     score++
     updateCounter()
   })
-  downvote.addEventListener('click', ()=>{
+  downvote.addEventListener('click', () => {
     score--
     updateCounter()
   })
 
-  function updateCounter(){
-    // rating.append(document.createTextNode(score))
-    rating.textContent= score
+  function updateCounter() {
+    rating.textContent = score
   }
 
   // Profile
@@ -105,14 +104,30 @@ function createNewComment() {
   deleteBtn.append(deleteIcon);
   deleteBtn.append(deleteText);
 
+
+  // Edit Button
+  const editBtn = document.createElement('div');
+  editBtn.classList = 'editBtn';
+
+  const editIcon = document.createElement('img');
+  editIcon.setAttribute('src', 'images/icon-edit.svg');
+
+  const editText = document.createElement('p');
+  editText.append(document.createTextNode('Edit'));
+
+  editBtn.append(editIcon);
+  editBtn.append(editText);
+
   // New Comment
   const newComment = document.querySelector('textarea').value;
   const comment = document.createElement('p');
+  comment.classList = 'comment'
   comment.append(document.createTextNode(newComment));
 
   commentInfo.append(profilePicture);
   commentInfo.append(name);
   commentInfo.append(deleteBtn);
+  commentInfo.append(editBtn);
 
   wrapper.append(commentInfo);
   wrapper.append(comment);
@@ -123,15 +138,62 @@ function createNewComment() {
 
   // Now add an event listener to the delete button
   deleteBtn.addEventListener('click', deleteComment);
+  editBtn.addEventListener('click', editComment);
 
   console.log(deleteBtn);
 }
 
 function deleteComment(event) {
-  console.log(event)
   const container = event.target.closest('.container');
   if (container) {
     container.remove();
   }
 }
 
+function editComment(event) {
+  const container = event.target.closest('.container');
+  if (container) {
+
+    const commentToBeEdited = container.querySelector('.comment')
+    const wrapper = container.querySelector('.wrapper')
+
+    const editTextarea = document.createElement('textarea')
+    editTextarea.classList = 'editTextarea'
+    editTextarea.value = commentToBeEdited.textContent
+
+    wrapper.replaceChild(editTextarea, commentToBeEdited)
+
+    // Update Button
+    const update = document.createElement("input")
+    update.setAttribute('type', 'submit')
+    update.setAttribute('value', 'Update')
+    update.classList = 'cta'
+
+     // Check if the "Update" button is already present
+     if (!wrapper.querySelector('.cta')) {
+      wrapper.append(update);
+    }
+
+    update.addEventListener('click', updateComment)
+  }
+}
+
+function updateComment(event) {
+  const container = event.target.closest('.container');
+  if (container) {
+    const updatedComment = document.createElement('p');
+    updatedComment.classList = 'comment';
+
+    const editingTextarea = container.querySelector('.editTextarea');
+    updatedComment.textContent = editingTextarea.value;
+
+    const wrapper = container.querySelector('.wrapper');
+    wrapper.replaceChild(updatedComment, editingTextarea);
+
+    // Remove the "Update" button after updating the comment
+    const updateButton = container.querySelector('.cta');
+    if (updateButton) {
+      updateButton.remove();
+    }
+  }
+}
