@@ -71,6 +71,10 @@ main {
   width: 15px;
 }
 
+.votes{
+  cursor: pointer;
+}
+
 .wrapper {
   width: 90%;
   display: flex;
@@ -125,6 +129,15 @@ main {
   color: var(--Moderate-blue);
   font-weight: 500;
   margin-left: 5px;
+}
+
+.actions p{
+  transition: all 200ms ease-in;
+}
+
+.actions:hover p,
+.actions:focus p{
+  letter-spacing: 1px;
 }
 
 .createComment {

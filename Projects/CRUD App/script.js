@@ -1,34 +1,3 @@
-/*
- <div class="comment">
-        <div class="rating">
-          <img src="images/icon-plus.svg" alt="" />
-          <p class="score main"></p>
-          <img src="images/icon-minus.svg" alt="" />
-        </div>
-
-        <div class="wrapper">
-          <div class="commentInfo">
-            <div class="user">
-              <img src="images/avatars/image-amyrobson.png" alt="profile pic" />
-              <p class="name main"></p>
-              <p class="createdAt"></p>
-            </div>
-
-            <div class="options">
-              <div class="btn replyLink">
-                <img src="images/icon-reply.svg" alt="icon" />
-                <p>Reply</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="textContainer">
-            <p class="text main"></p>
-          </div>
-        </div>
-      </div>
-*/
-
 const main = document.querySelector('main');
 const send = document.querySelector("input[type='submit']");
 const createCommentDiv = document.querySelector('.createComment');
@@ -226,6 +195,3 @@ function updateComment(event) {
     }
   }
 }
-
-
-
