@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <audio src="music.weba" id="audio"></audio>
+
+      <div class="wrapper">
+        <button id="replay">
+          <img src="images/replay_10.svg" alt="replay_10" />
+        </button>
+        <button id="play">
+          <img src="images/play_circle.svg" alt="play" />
+        </button>
+        <button id="forward">
+          <img src="images/forward_10.svg" alt="forward_10" />
+        </button>
+      </div>
+
+      <input type="range" id="current-time" min="0" step="1" value="0" />
+
+      <button id="pause"><img src="images/pause.svg" alt="pause" /></button>
+      <button id="stop"><img src="images/stop_circle.svg" alt="stop" /></button>
+
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1" />
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

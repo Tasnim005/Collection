@@ -1,5 +1,6 @@
 {
     "githubPullRequests.ignoredPullRequestBranches": [
         "main"
-    ]
+    ],
+    "livePreview.defaultPreviewPath": "/Modern JS Course/09-Web-Browser-APIs/05-Request-Animation-Frame/index.html"
 }
