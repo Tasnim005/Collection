@@ -6,6 +6,8 @@ let voices;
 function addVoicesToSelect() {
   voices = synth.getVoices();
 
+  console.log(voices)
+
   for (let i = 0; i < voices.length; i++) {
     const option = document.createElement('option');
     option.textContent = `${voices[i].name} - ${voices[i].lang}`;

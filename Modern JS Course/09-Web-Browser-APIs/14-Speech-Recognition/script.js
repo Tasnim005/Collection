@@ -1,34 +1,45 @@
-const SpeechRecognition =
+const listener = document.querySelector('#listener')
+const startMessage = document.getElementById('startMessage')
+const endMessage = document.getElementById('endMessage')
+
+
+if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+
+  // Create a SpeechRecognition object
+  const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
-const rec = new SpeechRecognition();
+  const recognition = new SpeechRecognition();
 
-rec.lang = 'en-US';
-rec.continuous = true;
+  // Set up event handlers
+  listener.addEventListener('click', startListening)
 
-rec.onresult = function (e) {
-  const acceptedColors = [
-    'red',
-    'blue',
-    'green',
-    'yellow',
-    'pink',
-    'brown',
-    'purple',
-    'orange',
-    'black',
-    'white',
-  ];
+  function startListening(){
+    recognition.onstart = () => {
+      startMessage.textContent ='Speech recognition started'
 
-  for (let i = e.resultIndex; i < e.results.length; i++) {
-    const script = e.results[i][0].transcript.toLowerCase().trim();
+      startMessage.style.display = 'block'
+      endMessage.style.display = 'none'
+    };
+  
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      document.getElementById('output').textContent = `You said: ${transcript}`;
+      console.log(event)
+    };
+  
+    recognition.onend = () => {
+      endMessage.textContent ='Speech recognition ended'
 
-    if (acceptedColors.includes(script)) {
-      document.body.style.backgroundColor = script;
-    } else {
-      alert('Please say a color');
-    }
+      startMessage.style.display = 'none'
+      endMessage.style.display = 'block'
+    };
+  
+    // Start recognition when the page loads
+    recognition.start();
   }
-};
 
-rec.start();
+ 
+} else {
+  alert('Speech recognition is not supported in this browser. Please use a modern browser that supports the Web Speech API.');
+}
