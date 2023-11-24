@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getters & Setters With Classes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Getter and Setter Intro</h1>
+      <h2>Getter</h2>
+      <p>
+        Getter is like asking a question. When you want to know the value of
+        something, you ask a question (get information).
+      </p>
+      <br />
+      <p>Imagine you have a Person object:</p>
+
+      <pre>
+        <code>
+    const person = {
+      _name: 'John',
+          
+      get name() {
+         return this._name;
+      }
+    };
+          
+    console.log(person.name); // Output: 'John'
+        </code>
+      </pre>
+
+      <p>
+        In this example, get name() is like asking, "What is the name of this
+        person?" The name getter allows you to get the value of _name from the
+        person object.
+      </p>
+    </article>
+
+    <article>
+      <h2>Setter</h2>
+      <p>Setter is like giving a command. When you want to change something, you give a command (set a new value).</p>
+      <br>
+      <p>Continuing with the Person object:</p>
+
+      <pre>
+        <code>
+   const person = {
+     _name: 'John',
+          
+      get name() {
+        return this._name;
+      },
+            
+      set name(newName) {
+        this._name = newName;
+      }
+    };
+          
+    person.name = 'Jane';
+    console.log(person.name); // Output: 'Jane'
+                  
+        </code>
+      </pre>
+
+      <p>Here, set name(newName) is like giving the command, "Set the name of this person to a new value." The name setter allows you to change the value of _name in the person object.</p>
+    </article>
+
+    <article>
+      <h2>Why use Getters and Setters?</h2>
+      <ol>
+        <li><b>Encapsulation: </b>Getters and setters help you control how values are accessed and modified, providing a level of protection for your data.</li>
+
+        <li><b>Validation: </b>You can add checks or transformations when getting or setting values. For example, ensuring a name is always capitalized.</li>
+
+        <li><b>Abstraction: </b>Getters and setters allow you to abstract away the internal implementation details of an object.</li>
+      </ol>
+
+      <p>In summary, think of getters as a way to ask questions about the state of an object, and setters as a way to give commands to change that state. They provide a clean and controlled interface for interacting with your objects.</p>
+    </article>
+
+    <script src="script.js"></script>
+  </body>
+</html>

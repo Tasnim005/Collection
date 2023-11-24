@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Inheritance</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <article>
+      <h1>Class Inheritance</h1>
+
+      <h2>Inheritance</h2>
+
+      <p>
+        <b>Definition: </b>Inheritance is a mechanism in object-oriented
+        programming that allows one class to inherit the properties and methods
+        of another class. The class that is inherited from is called the base
+        class or parent class, and the class that inherits is called the derived
+        class or subclass.
+      </p>
+
+      <h3>Demonstration in the Code:</h3>
+
+      
+
+      <pre>
+        <code>
+  class Rectangle extends Shape {
+    constructor(name, width, height) {
+      super(name);
+      this.width = width;
+      this.height = height;
+    }
+  }
+        </code>
+      </pre>
+
+      <ul>
+        <li>
+          The Rectangle class extends the Shape class, inheriting its properties
+          and methods.
+        </li>
+        <li>
+          The super(name) line in the Rectangle constructor calls the
+          constructor of the parent class (Shape), ensuring that the name
+          property is properly initialized.
+        </li>
+        <li>
+          The logName method of the Shape class is available to instances of
+          Rectangle.
+        </li>
+      </ul>
+
+      <p>
+        Now, when you create an instance of Rectangle and call logName, you get
+        the behavior defined in the parent class:
+      </p>
+
+      <pre>
+        <code>
+  const rect = new Rectangle('Rect 1', 20, 20);
+  rect.logName(); // Outputs: Shape Name: Rect 1
+
+        </code>
+      </pre>
+
+      <p>
+        This demonstrates inheritance, where the Rectangle class inherits the
+        logName method from the Shape class and can also have its own additional
+        properties and methods.
+      </p>
+    </article>
+
+    <article>
+      <h2>Polymorphism</h2>
+
+      <p>
+        <b>Definition: </b>Polymorphism allows objects of different classes to be
+        treated as objects of a common base class. In other words, it allows a
+        single interface to represent different types of objects.
+      </p>
+
+      <h3>Demonstration in the Code:</h3>
+
+      <pre>
+        <code>
+  class Circle extends Shape {
+    constructor(name, radius) {
+      super(name);
+      this.radius = radius;
+    }
+
+  // We can override the Shape logName() (polymorphism)
+    logName() {
+      console.log('Circle Name: ' + this.name);
+    }
+  }
+        </code>
+      </pre>
+
+      <ul>
+        <li>Polymorphism is demonstrated through the logName method.</li>
+        <li>
+          Both the Shape and Circle classes have a logName method. The Circle
+          class overrides the logName method, providing its own implementation.
+        </li>
+        <li>
+          When you call logName on an instance of Circle, it displays a message
+          specific to circles. This is an example of method overriding, which is
+          a form of polymorphism.
+        </li>
+      </ul>
+    </article>
+
+    <script src="script.js"></script>
+  </body>
+</html>

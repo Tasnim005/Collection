@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Methods</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <article>
+      <h1>Static Methods</h1>
+
+      <p>
+        In object-oriented programming, a static method is a method that belongs to a class rather than an instance of the class. Unlike instance methods, which operate on instances of the class and have access to instance-specific data, static methods are associated with the class itself and do not have access to instance-specific data.</p>
+
+        <ol>Here are some key characteristics of static methods:
+          <li>Declared with the 'static' Keyword</li>
+          <li>Accessed on the Class, Not Instances</li>
+          <li>Since static methods are associated with the class, they do not have access to instance-specific data or properties. They can only access static properties and other static methods.</li>
+          <li>Static methods are often used for utility functions that are related to the class but don't depend on the specific state of instances.</li>
+          <li>They can also be used to create factory methods or perform operations that are not tied to a particular instance.</li>
+        </ol>
+
+        <p>Here's an example in JavaScript:</p>
+
+        <pre>
+          <code>
+  class MyClass {
+     constructor() {
+        // Instance-specific data
+        this.instanceProperty = 'Instance-specific data';
+        }
+            
+        // Instance method
+        instanceMethod() {
+          console.log('Instance method called');
+        }
+            
+        // Static method
+        static staticMethod() {
+          console.log('Static method called');
+          // Static methods cannot access instance-specific data
+          // Uncommenting the next line would result in an error
+          // console.log(this.instanceProperty); // Error
+        }
+  }
+  
+ // Creating an instance of MyClass
+  const myInstance = new MyClass();
+            
+  // Calling the instance method
+  myInstance.instanceMethod(); // Outputs: Instance method called
+            
+  // Calling the static method on the class itself
+  MyClass.staticMethod(); // Outputs: Static method called
+            
+          </code>
+        </pre>
+        
+        <p>In this example, staticMethod is a static method, and it can be called on the class MyClass. Note that it does not have access to this.instanceProperty because static methods don't have access to instance-specific data.</p>
+    </article>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
