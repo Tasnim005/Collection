@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flags & Descriptors</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Flags & Descriptors</h1>
+      <p>
+        In JavaScript, property descriptors provide information about a property
+        and control certain aspects of its behavior. Property descriptors are
+        used when working with objects and defining or modifying properties.
+        Flags, on the other hand, refer to specific attributes or
+        characteristics associated with property descriptors.
+      </p>
+
+      <section>
+        <h2>Property Descriptors</h2>
+        <p>
+          A property descriptor is an object that defines the attributes of a
+          property. It has the following fields:
+        </p>
+        <ul>
+          <li><b>value:</b> The value associated with the property.</li>
+          <li>
+            <b>writable:</b> A boolean indicating whether the property value can
+            be changed.
+          </li>
+          <li>
+            <b>enumerable:</b> A boolean indicating whether the property will
+            appear in a for...in loop.
+          </li>
+          <li>
+            <b>configurable:</b> A boolean indicating whether the property can
+            be deleted or its attributes can be modified.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Flags:</h2>
+        <p>
+          Flags, in the context of property descriptors, are boolean values that
+          indicate specific characteristics of a property. The flags are derived
+          from the writable, enumerable, and configurable properties of the
+          descriptor.
+        </p>
+
+        <ol>
+          <li>
+            <b>Writable Flag:</b>
+            <ul>
+              <li>
+                <b>true</b>: The property can be changed with an assignment.
+              </li>
+              <li><b>false</b>: The property is read-only.</li>
+            </ul>
+          </li>
+
+          <li>
+            <b>Enumerable Flag:</b>
+            <ul>
+              <li>
+                <b>true</b>: The property will be iterated over in a
+                <b>for...in</b> loop.
+              </li>
+              <li>
+                <b>false</b>: The property will be skipped over in a
+                <b>for...in</b> loop.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <b>Configurable Flag:</b>
+            <ul>
+              <li>
+                <b>true</b>: The property can be deleted, and its attributes can
+                be modified.
+              </li>
+              <li>
+                <b>false</b>: The property cannot be deleted, and its attributes
+                cannot be modified.
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <p>
+        Understanding property descriptors and flags is crucial when you need
+        fine-grained control over object properties, especially in scenarios
+        where you want to create read-only, non-enumerable, or non-configurable
+        properties.
+      </p>
+    </article>
+
+    <script src="script.js"></script>
+  </body>
+</html>

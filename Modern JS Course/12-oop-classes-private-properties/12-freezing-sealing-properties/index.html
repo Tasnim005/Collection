@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freezing & Sealing Properties</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Freezing & Sealing Properties</h1>
+      <p>
+        In JavaScript, you can use Object.freeze() and Object.seal() to control
+        the mutability and configurability of object properties. These methods
+        provide a way to make objects or certain properties read-only and
+        prevent them from being added or removed
+      </p>
+
+      <h2>Differences:</h2>
+      <ul>
+        <li>
+          <b>Object.freeze()</b> makes the entire object and all of its
+          properties read-only.
+        </li>
+        <li>
+          <b>Object.seal()</b> allows modifications to existing properties but
+          prevents adding new properties or deleting existing ones.
+        </li>
+      </ul>
+    </article>
+
+    <script src="script.js"></script>
+  </body>
+</html>
