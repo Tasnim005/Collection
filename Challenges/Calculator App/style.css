@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Theme 1 */
+  /* Background */
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-and-keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --key-background: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  --reset-key-background: hsl(225, 21%, 49%);
+  --reset-key-shadow: hsl(224, 28%, 35%);
+  --equal-key-background: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+
+  /* Text */
+  --key-text: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+
+  --spacing: 1.2rem;
+  --border-radius: 0.6rem;
+}
+
+body {
+  background: var(--main-background);
+  color: var(--White);
+  font-family: "League Spartan", sans-serif;
+  /* min-height: 100vh; */
+  width: 70%;
+  margin: 4rem auto;
+  display: grid;
+  place-content: center;
+  outline: 1px solid green;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+
+.theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.toggleField {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.themeNo {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-right: 0.7rem;
+}
+
+.toggle {
+  background: var(--toggle-and-keypad-background);
+  width: 4.5rem;
+  height: 1.6rem;
+  padding: 0.3rem 0.4rem;
+  /* margin-top: 0.4rem; */
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  background: var(--equal-key-background);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.keypad {
+  background: var(--screen-background);
+  color: var(--white);
+  width: 100%;
+  padding: 3.5rem var(--spacing);
+  border: none;
+  border-radius: var(--border-radius);
+  margin-block: var(--spacing);
+  text-align: right;
+}
+
+main {
+  background: var(--toggle-and-keypad-background);
+  border-radius: var(--border-radius);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing);
+  text-align: center;
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+}
+
+.key {
+  background: var(--key-background);
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: var(--border-radius);
+  border-bottom: 4px solid var(--key-shadow);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--key-text);
+}
+
+.wrapper {
+  padding: 0 var(--spacing) var(--spacing) var(--spacing);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing);
+}
+
+.wrapper button {
+  color: var(--white);
+  width: 100%;
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  border: none;
+  border-bottom: 4px solid;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.key:nth-of-type(4),
+#reset {
+  background: var(--reset-key-background);
+  border-bottom-color: var(--reset-key-shadow);
+}
+
+#delete {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+#equal {
+  background: var(--equal-key-background);
+  border-bottom-color: var(--equal-key-shadow);
+}
