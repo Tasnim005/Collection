@@ -1,4 +1,5 @@
 const keypad = document.querySelector('.keypadContent')
+const keypadDisplay = document.querySelector('.keypad')
 const deleteButton = document.querySelector('#delete')
 const resetButton = document.querySelector('#reset')
 const solve = document.querySelector('#equal')
@@ -9,6 +10,7 @@ solve.addEventListener('click', solveFunction)
 
 function appendToDisplay(value) {
     keypad.textContent += value
+    keypadDisplay.style.paddingBlock = '2rem'
 }
 
 function del() {
@@ -17,12 +19,17 @@ function del() {
 
 function reset() {
     keypad.textContent = ''
+    keypadDisplay.style.paddingBlock = '3.5rem'
 }
 
 function solveFunction() {
-    keypad.textContent = eval(keypad.textContent)
-    // console.log(typeof keypad.textContent)
-
+    const formattedNumber = eval(keypad.textContent)
+    if (Number(formattedNumber) % 1 === 0) {
+        return keypad.textContent = formattedNumber
+    } else {
+        // Decimal Number
+        return keypad.textContent = formattedNumber.toFixed(2)
+    }
 }
 
 // Keyboard
@@ -33,9 +40,47 @@ function keyBoardtoDisplay(e) {
     } else if (e.key === 'Backspace' || e.key === 'Delete') {
         keypad.textContent = keypad.textContent.slice(0, -1)
     } else if (e.key === 'Enter') {
-        keypad.textContent = eval(keypad.textContent)
+        solveFunction()
     }
     else {
         keypad.textContent = 'Error'
     }
 }
+
+
+// 3 State Toggle
+const toggleStates = document.querySelectorAll('.toggle-state')
+const circle = document.querySelector('.circle')
+console.log()
+
+
+toggleStates.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        const clickedButton = event.target;
+        const clickedIndex = Array.from(toggleStates).indexOf(clickedButton);
+
+        function formula() {
+            return Math.ceil(((100 / toggleStates.length) * (clickedIndex)))
+        }
+
+        if (clickedIndex === 0) {
+            circle.style.left = '0%'
+            circle.style.marginLeft = '0.3rem'
+            circle.style.marginRight = '0'
+            document.body.className = ''
+        } else if (clickedIndex === (toggleStates.length - 1)) {
+            circle.style.left = `${formula()}%`
+            circle.style.marginLeft = '0'
+            circle.style.marginRight = '0'
+            document.body.className = 'theme3'
+        } else {
+            circle.style.left = `${formula()}%`
+            circle.style.marginInline = '0'
+            document.body.className = 'theme2'
+        }
+    })
+})
+
+
+
+
