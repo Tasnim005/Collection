@@ -1,0 +1,28 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: subgrid;
+  gap: 1rem;
+}
+
+.item {
+  border: 1px solid greenyellow;
+  padding: 10px;
+  text-align: center;
+}
