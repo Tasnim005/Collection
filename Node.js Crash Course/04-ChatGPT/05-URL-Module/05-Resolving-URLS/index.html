@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolved URLs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article>
+        <div>
+            <h2>Base URL:</h2>
+            <ul>
+                <li>A base URL is the starting point for resolving relative URLs. It provides the context against which relative URLs are interpreted. The base URL typically includes the <b>protocol, hostname, and path</b>, but may exclude the fragment identifier and query parameters.</li>
+                <li>Example: If you have a base URL of <b>https://www.example.com/path/to/page</b>, this is the base against which you might resolve relative URLs.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Relative URL:</h2>
+            <ul>
+                <li>
+                    A relative URL specifies a resource in relation to the current document or base URL. It <b>doesn't include the full domain or protocol</b> but provides a path or reference relative to the current location.
+                </li>
+                <li>Example: In the URL <b>../another/page</b>, the <b>../</b> denotes a relative path, and it would be resolved relative to the current location.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Resolved URL:</h2>
+            <ul>
+                <li>A resolved URL is the result of <b>combining a base URL with a relative URL to create a complete, fully qualified URL</b>. The <b>url.resolve()</b> method in Node.js is commonly used for this purpose.</li>
+                <li>Example: If you have a base URL of <b>https://www.example.com/path/to/page</b> and a relative URL of ../another/page, resolving them would result in the resolved URL <b>https://www.example.com/another/page</b>.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Absolute URL:</h2>
+            <ul>
+                <li>An absolute URL is a <b>complete URL that includes all the necessary components: protocol, hostname, port, path, query parameters, and fragment identifier.</b> An absolute URL can be used independently to locate a resource.</li>
+                <li>Example: <b>https://www.example.com/path/to/page</b> is an absolute URL.</li>
+            </ul>
+        </div>
+
+        <div>
+            <p>In summary, an absolute URL is a complete and standalone URL, while a relative URL provides a path or reference relative to a base URL. Resolving a relative URL against a base URL results in a fully qualified, absolute, or resolved URL. So, while "resolved URL" and "absolute URL" are not precisely synonymous, they are often used interchangeably because resolving a relative URL typically results in an absolute URL.</p>
+        </div>
+    </article>
+</body>
+</html>

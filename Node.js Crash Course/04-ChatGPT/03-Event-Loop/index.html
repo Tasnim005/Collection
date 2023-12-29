@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Loop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Event Loop</h1>
+      <p>
+        The Event Loop is a fundamental concept in Node.js that plays a crucial
+        role in its <b>event-driven, non-blocking</b> architecture. Let's break
+        down the key components to help you understand how it works.
+      </p>
+      <br />
+
+      <div>
+        <h2>1. Single-Threaded and Non-Blocking:</h2>
+        <p>
+          Node.js is <b>single-threaded</b>, meaning it uses a single thread to
+          handle all operations. However, it employs an event-driven,
+          non-blocking I/O model. This means that
+          <i>instead of waiting for an I/O operation</i> (like reading from a
+          file or making a network request) to complete, Node.js
+          <b>continues to execute other tasks.</b>
+          When the I/O operation is finished, a callback is triggered.
+        </p>
+      </div>
+
+      <div>
+        <h2>2. Event Loop:</h2>
+        <p>
+          The Event Loop is the core of Node.js's architecture. It
+          <b
+            >continuously checks the message queue for new events and executes
+            associated callbacks.</b
+          >
+          Here's a simplified breakdown of the Event Loop:
+        </p>
+        <ul>
+          <li>
+            <b>Event Queue: </b
+            ><b>Asynchronous events, such as I/O operations or timers</b> , are
+            placed in the Event Queue when they are initiated.
+          </li>
+
+          <li>
+            <b>Call Stack: </b>The Call Stack is where
+            <b>synchronous code is executed</b>.
+            <em
+              >Each function call creates a stack frame, and when a function
+              completes, its frame is removed from the stack.</em
+            >
+          </li>
+
+          <li>
+            <b>Callback Queue (or Task Queue): </b>When an asynchronous
+            operation completes, its callback function is placed in the Callback
+            Queue.
+          </li>
+
+          <li>
+            <b>Event Loop:</b>The Event Loop
+            <b>continuously checks the Callback Queue.</b> If the Call Stack is
+            empty, it takes the first callback from the queue and pushes it onto
+            the Call Stack for execution.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>3. Example Scenario:</h2>
+        <pre>
+            <code>
+const fs = require('fs');
+
+console.log('Start reading file...');
+                
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) throw err;
+        console.log('File content:', data);
+});
+                
+console.log('File reading request initiated...');
+            </code>
+        </pre>
+
+        <p>In this example, the file reading operation is asynchronous. Here's a step-by-step breakdown:</p>
+        <ol>
+            <li><b>console.log('Start reading file...')</b> is added to the Call Stack and executed.</li>
+
+            <li><b>fs.readFile(...)</b> is initiated, and its callback is placed in the Event Queue.</li>
+
+            <li><b>console.log('File reading request initiated...')</b> is added to the Call Stack and executed.</li>
+
+            <li>The file reading operation completes, and its callback is moved to the Callback Queue.</li>
+
+            <li>The Event Loop checks the Callback Queue, finds the file reading callback, and pushes it onto the Call Stack for execution.</li>
+        </ol>
+      </div>
+
+      <div>
+        <h2>4. Advantages:</h2>
+        <ul>
+            <li><b>Non-Blocking I/O: </b>While waiting for I/O operations, the single-threaded nature of Node.js can handle other tasks, improving overall efficiency.</li>
+            <li><b>Scalability:</b>Node.js can handle a large number of concurrent connections without the need for multi-threading due to its non-blocking nature.</li>
+        </ul>
+      </div>
+    </article>
+  </body>
+</html>
