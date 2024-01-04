@@ -5,15 +5,12 @@
   "description": "Node.js Crash Course",
   "main": "script.js",
   "scripts": {
-    "devStart" : "nodemon server.js"
+    "devStart": "nodemon 01-Intro/server.js"
   },
   "author": "Tasnim Alam",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
     "uuid": "^9.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
   }
 }
