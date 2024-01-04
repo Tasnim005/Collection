@@ -5,11 +5,12 @@
   "description": "Node.js Crash Course",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart" : "nodemon server.js"
   },
   "author": "Tasnim Alam",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
