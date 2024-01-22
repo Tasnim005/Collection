@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/T.svg" />
+    <title>Intro section with dropdown navigation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="images/logo.svg" alt="" />
+      </div>
+      <ul>
+        <li id="features">
+          <a href="#">Features</a>
+          
+          <div class="dropdown">
+            <div class="container">
+              <img src="images/icon-todo.svg" alt="" />
+              <a href="#">Todo List</a>
+            </div>
+            <div class="container">
+              <img src="images/icon-calendar.svg" alt="" />
+              <a href="#">Calendar</a>
+            </div>
+            <div class="container">
+              <img src="images/icon-reminders.svg" alt="" />
+              <a href="#">Reminders</a>
+            </div>
+            <div class="container">
+              <img src="images/icon-planning.svg" alt="" />
+              <a href="#">Planning</a>
+            </div>
+          </div>
+        </li>
+
+        <li id="company">
+          <a href="#">Company</a>
+          <div class="dropdown">
+            <a href="#">History</a>
+            <a href="#">Our Team</a>
+            <a href="#">Blog</a>
+          </div>
+        </li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="cta">
+        <a href="#">Login</a>
+        <button>Register</button>
+      </div>
+    </nav>
+
+    <main>
+      <article>
+        <h1>Make remote work</h1>
+        <div class="text">
+          <p>Get your team in sync, no matter your location.</p>
+          <p>
+            Streamline processes, create team rituals, and watch productivity
+            soar.
+          </p>
+        </div>
+
+        <button>Learn more</button>
+
+        <div class="clients">
+          <img src="images/client-databiz.svg" alt="" />
+          <img src="images/client-audiophile.svg" alt="" />
+          <img src="images/client-meet.svg" alt="" />
+          <img src="images/client-maker.svg" alt="" />
+        </div>
+      </article>
+
+      <section>
+        <picture class="landing">
+          <source
+            media="(min-width: 550px)"
+            srcset="images/image-hero-desktop.png"
+          />
+          <source
+            media="(max-width: 551px)"
+            srcset="images/image-hero-mobile.png"
+          />
+          <img src="images/image-hero-mobile.png" alt="hero-image" />
+        </picture>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
