@@ -1,13 +1,14 @@
 const features = document.getElementById('features')
 const company = document.getElementById('company')
-const dropdowns = document.querySelectorAll('.dropdown')
+const featureDropdown = document.querySelector('.dropdown.one')
+const companyDropdown = document.querySelector('.dropdown.two')
 
 features.addEventListener('click', ()=>{
-    dropdowns[0].classList.toggle('active') 
+    featureDropdown.classList.toggle('active') 
 })
 
 company.addEventListener('click', ()=>{
-    dropdowns[1].classList.toggle('active') 
+    companyDropdown.classList.toggle('active') 
 })
 
 console.log(company)

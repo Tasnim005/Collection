@@ -18,7 +18,7 @@ body {
   background: var(--White);
 }
 
-h1{
+h1 {
   font-size: 5rem;
 }
 
@@ -31,11 +31,14 @@ p {
 
 img {
   width: 100%;
+  height: 100%;
 }
+
+
 
 /* NavBar */
 
-nav{
+nav {
   width: 100%;
   outline: 1px solid forestgreen;
   display: flex;
@@ -44,32 +47,33 @@ nav{
   padding: 2rem;
 }
 
-.logo{
+.logo {
   width: 85px;
 }
 
-ul{
+ul {
   width: 40%;
   display: flex;
   justify-content: space-between;
 }
 
-li{
+li {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--Medium-Gray);
   font-weight: 500;
 }
 
-li:hover a{
+li:hover a {
   color: var(--Almost-Black);
 }
 
 /* Dropdown */
-.dropdown{
+.dropdown {
+  
   background: #fff;
   padding: 1rem;
   margin-top: 1.5rem;
@@ -77,35 +81,64 @@ li:hover a{
   display: flex;
   flex-direction: column;
 
+  /* Box shadow */
+  -webkit-box-shadow: 1px 20px 44px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 20px 44px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 20px 44px 1px rgba(0, 0, 0, 0.2);
+
   display: none;
 }
 
-.dropdown.active{
+#features{
+  position: relative;
+}
+
+.dropdown.one{
+  position: absolute;
+  /* left: -45%; */
+  transform: translateX(-50%);
+}
+
+.dropdown.two{
+  position: absolute;
+}
+
+.dropdown.active {
   display: block;
 }
 
-.container{
+
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-
 }
 
-.container img{
+.container img {
   width: 16px;
   height: 16px;
   margin-right: 0.8rem;
 }
 
-#company .dropdown{
-  display: flex;
+/* #company .dropdown{
+  display: flex; 
   flex-direction: column;
-  gap: 1rem;
-  /* display: none; */
+  gap: 1rem; 
+  display: none;
+} */
+
+/* If we use the above block of code, it overrides our script and hampers the desired outcome */
+#company a {
+  display: block;
 }
 
-button{
+#company a:nth-of-type(2) {
+  margin-block: 1rem;
+}
+
+button {
   background: #000;
   color: #fff;
   border: none;
@@ -116,43 +149,52 @@ button{
   transition: all 300ms ease-in-out;
 }
 
-button:hover{
+button:hover {
   background: none;
   color: #000;
   outline: 1px solid #000;
 }
 
-.cta button{
+.cta button {
   background: none;
   color: var(--Medium-Gray);
   outline: 2px solid var(--Medium-Gray);
   margin-left: 2rem;
 }
 
-.cta button:hover{
+.cta button:hover {
   color: var(--Almost-Black);
   outline: 2px solid var(--Almost-Black);
 }
 
 /* Landing */
-main{
+main {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   place-items: center;
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
   gap: 4rem;
   padding: 0 5rem;
+
+  /* height: 100%; */
 }
 
-.text{
-  margin-block: 2rem;
+ /* article{
+  height: 100%;
 }
 
+.landing{
+  width: 100%;
+  height: 10vh; 
+} */
 
+.text {
+  margin-block: 3rem;
+}
 
-.clients{
+.clients {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -160,7 +202,7 @@ main{
   margin-top: 4rem;
 }
 
-.clients img{
+.clients img {
   width: 100%;
   height: 100%;
 }
