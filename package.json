@@ -2,10 +2,10 @@
   "name": "codes",
   "type": "module",
   "version": "1.0.0",
-  "description": "Node.js Crash Course",
-  "main": "script.js",
+  "description": "Backend Development",
+  "main": "E:/Codes/Backend Development/Mongoose Crash Course/app.js",
   "scripts": {
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon E:/Codes/Backend Development/Mongoose Crash Course/app.js"
   },
   "author": "Tasnim Alam",
   "license": "MIT",

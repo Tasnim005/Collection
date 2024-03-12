@@ -64,7 +64,7 @@ nav {
 }
 
 .container {
-  padding: 3rem;
+  padding: 5rem;
 }
 
 .textContainer {
@@ -83,6 +83,7 @@ nav {
   font-size: 1.3rem;
   color: var(--quoteText);
   margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 
 .reference {
@@ -105,4 +106,10 @@ nav {
   --quoteText: #fff;
   --referenceText: #f7f8f9;
   --logo: #5c60e1;
+}
+
+@media (max-width: 650px) {
+  .container {
+    min-height: 50vh;
+  }
 }
