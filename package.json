@@ -3,9 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Backend Development",
-  "main": "E:/Codes/Backend Development/Mongoose Crash Course/app.js",
+  "main": "E:/Codes/Backend Development/Mongoose Crash Course/queryBasics.js",
   "scripts": {
-    "devStart": "nodemon E:/Codes/Backend Development/Mongoose Crash Course/app.js"
+    "devStart": "nodemon E:/Codes/Backend Development/Mongoose Crash Course/queryBasics.js"
   },
   "author": "Tasnim Alam",
   "license": "MIT",

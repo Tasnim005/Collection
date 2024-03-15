@@ -24,15 +24,38 @@ async function run() {
     console.log(user);
 }
 */
-
+/*
 async function run() {
     const user = await User.create({
         name: "Tasnim",
         age: 21,
+        email: "TEST@test.com",
         hobbies: ["Weight lifting", 'Bowling'],
         address: {
             street: "Main St",
         },
     })
     console.log(user);
+}
+*/
+
+
+
+// to check for error, put entire code block inside try-catch
+async function run() {
+    try{
+        const user = await User.create({
+            name: "Tasnim",
+            age: 20,
+            email: "TEST@test.com",
+            hobbies: ["Weight lifting", 'Bowling'],
+            address: {
+                street: "Main St",
+            },
+        })
+        console.log(user);
+    } catch(e){
+        console.log(e.message)
+        // console.log(e.errors.age)
+    }
 }
