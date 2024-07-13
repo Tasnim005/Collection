@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         elementsArray[index].classList.remove("hidden");
         setTimeout(function() {
           showChildrenWithDelay(index + 1);
-        }, 700); // Adjust the delay (in milliseconds) as needed
+        }, 800); // Adjust the delay (in milliseconds) as needed
       }
     }
 
