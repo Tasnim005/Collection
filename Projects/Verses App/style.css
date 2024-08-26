@@ -8,7 +8,8 @@
 
 :root {
     --primary: #fff;
-    --secondary: #f7f8f9;
+    --secondary: #faf7ff;
+    --tertiary: #9F9FED;
     --quoteText: #272727;
     --referenceText: #35373e;
     --logo: #5c60e1;
@@ -18,9 +19,15 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+h2{
+    text-align: center;
+    margin-block: 2rem;
+}
+
 .slide{
     position: relative;
     min-height: 100vh;
+    padding: 2rem;
     background: var(--primary);
     display: none;
 }
@@ -41,8 +48,11 @@ body{
 }
 
 .btn{
-    background: var(--secondary);
-    padding: 1rem 2rem;
+    background: var(--tertiary);
+    color: var(--primary);
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -57,10 +67,74 @@ body{
 }
 
 .engText{
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-block: 1.2rem 1.4rem;
+    line-height: 1.5;
 }
 
 .reference{
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+}
+
+.addBookmark{
+    background: var(--secondary);
+    padding: 2rem;
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 'surahNo verseNo add';
+    gap: 1rem;
+}
+
+#surahNo{
+    grid-area: surahNo;
+}
+
+#verseNo{
+    grid-area: verseNo;
+}
+
+#add{
+    grid-area: add;
+}
+
+input{
+    width: 100%;
+    padding: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+}
+
+input[type="submit"]{
+    background: var(--tertiary);
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* For Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.wrapper{
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+@media(max-width:768px){
+    .container{
+        grid-template-areas: 'surahNo verseNo' 'add add';
+    }
 }
