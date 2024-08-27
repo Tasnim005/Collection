@@ -19,6 +19,7 @@
   --Rose-900: hsl(14, 65%, 9%);
 
   --border-radius: 0.8rem;
+  --gap: 1.5rem
 }
 
 body {
@@ -27,8 +28,13 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    width: 90%;
-    margin: 2rem auto;
+    width: 85%;
+    min-height: auto;
+    margin: 3rem auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap)
 }
 
 img{
@@ -36,10 +42,83 @@ img{
   height: 100%;
 }
 
+h1{
+  color: var(--Rose-900);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+aside{
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  height: fit-content;
+}
+
+aside h3{
+  color: var(--Red);
+}
+
+aside p{
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--Rose-500);
+}
+
+.emptyState{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emptyState img{
+  width: 128px;
+  height: 128px;
+  margin-block: 2.5rem 1.5rem;
+}
+
+.emptyState p{
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+
+}
+
+.activeState{
+  display: none;
+}
+
+.info{
+  background: var(--Rose-50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-block: 1.5rem;
+  border-radius: 5px;
+}
+
+.info img{
+  width: 21px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+button{
+  background: var(--Red);
+  color: #fff;
+  width: 100%;
+  border: 0;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+  letter-spacing: 1px;
+}
+
 main{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--gap);
 }
 
 .imgContainer{
@@ -55,8 +134,11 @@ main{
   transform: translateY(40%);
 
   display: flex;
-
-  padding: 0.8rem 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0.8rem;
   border-radius: 2rem;
   border: 1px solid var(--Rose-500);
   background: #fff;
@@ -75,7 +157,7 @@ main{
 
 .addToCartText{
   color: var(--Rose-900);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -86,10 +168,13 @@ main{
   bottom: 0;
   transform: translateY(40%);
 
-  display: flex;
+  /* display: flex; */
+  display: none;
+
   justify-content: space-between;
   align-items: center;
-
+  width: 60%;
+  margin: 0 auto;
   padding: 0.8rem 1rem;
   border-radius: 2rem;
   border: 1px solid var(--Rose-500);
@@ -106,11 +191,6 @@ main{
 
   cursor: pointer;
 }
-
-.quantity{
-  margin-inline: 3rem;
-}
-
 
 .productImage{
   border-radius: var(--border-radius);
@@ -146,4 +226,17 @@ main{
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+
+@media (max-width:1150px) {
+  body {
+    grid-template-columns: 60% 40%;
+}
+}
+
+@media (max-width:1000px) {
+  body {
+    grid-template-columns: 1fr;
+}
 }

@@ -1,140 +1,178 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary: #fff;
-    --secondary: #faf7ff;
-    --tertiary: #9F9FED;
-    --quoteText: #272727;
-    --referenceText: #35373e;
-    --logo: #5c60e1;
-  }
-
-body{
-    font-family: 'Roboto', sans-serif;
+  --primary: #fff;
+  --secondary: #faf7ff;
+  --tertiary: #9f9fed;
+  --quoteText: #272727;
+  --referenceText: #35373e;
+  --logo: #5c60e1;
 }
 
-h2{
-    text-align: center;
-    margin-block: 2rem;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.slide{
-    position: relative;
-    min-height: 100vh;
-    padding: 2rem;
-    background: var(--primary);
-    display: none;
+h2 {
+  text-align: center;
+  margin-block: 2rem;
 }
 
-.slide.active{
+/* Style for loading screen */
+ .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    z-index: 999;
+  }
+    
+  
+  /* Opening SVG */
+.opening {
+  color: #fccb06;
 }
 
-.buttons{
-    position: absolute;
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+ 
+
+.slide {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--primary);
+  display: none;
 }
 
-.btn{
-    background: var(--tertiary);
-    color: var(--primary);
-    font-size: 1.5rem;
-    padding: 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.slide.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.text{
-    text-align: center;
-    width: 75%;
+.buttons {
+  position: absolute;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.arabicText{
-    font-size: 3rem;
+.btn {
+  background: var(--tertiary);
+  color: var(--primary);
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.engText{
-    font-size: 1rem;
-    margin-block: 1.2rem 1.4rem;
-    line-height: 1.5;
+.text {
+  text-align: center;
+  width: 75%;
 }
 
-.reference{
-    font-size: 0.8rem;
+.arabicText {
+  font-size: 3rem;
 }
 
-.addBookmark{
-    background: var(--secondary);
-    padding: 2rem;
-    text-align: center;
+.engText {
+  font-size: 1rem;
+  margin-block: 1.2rem 1.4rem;
+  line-height: 1.5;
 }
 
-.container{
-    display: grid;
-    grid-template-areas: 'surahNo verseNo add';
-    gap: 1rem;
+.reference {
+  font-size: 0.8rem;
 }
 
-#surahNo{
-    grid-area: surahNo;
+.addBookmark {
+  background: var(--secondary);
+  padding: 2rem;
+  text-align: center;
 }
 
-#verseNo{
-    grid-area: verseNo;
+.container {
+  display: grid;
+  grid-template-areas: "surahNo verseNo add";
+  gap: 1rem;
 }
 
-#add{
-    grid-area: add;
+#surahNo {
+  grid-area: surahNo;
 }
 
-input{
-    width: 100%;
-    padding: 2rem;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-
+#verseNo {
+  grid-area: verseNo;
 }
 
-input[type="submit"]{
-    background: var(--tertiary);
-    color: var(--primary);
-    font-weight: 700;
+#add {
+  grid-area: add;
+}
+
+input {
+  width: 100%;
+  padding: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background: var(--tertiary);
+  color: var(--primary);
+  font-weight: 700;
 }
 
 /* For Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* For Firefox */
-input[type="number"] {
+/* input[type="number"] {
     -moz-appearance: textfield;
+} */
+
+.wrapper {
+  width: 80%;
+  margin: 2rem auto;
+  text-align: center;
 }
 
-.wrapper{
-    width: 80%;
-    margin: 2rem auto;
-    text-align: center;
-}
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas: "surahNo verseNo" "add add";
+  }
 
-@media(max-width:768px){
-    .container{
-        grid-template-areas: 'surahNo verseNo' 'add add';
-    }
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .arabicText {
+    font-size: 2rem;
+  }
+
+  .engText {
+    font-size: 0.7rem;
+  }
+
+  .reference {
+    font-size: 0.5rem;
+  }
 }
