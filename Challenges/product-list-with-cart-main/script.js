@@ -115,6 +115,7 @@ function addCartListeners() {
             const decrement = counter.querySelector('.decrementIcon');
             const quantity = counter.querySelector('.quantity');
             let i = Number(quantity.innerText);
+           
 
             //Cart
             const activeState = document.querySelector('.activeState')
@@ -175,6 +176,9 @@ function addCartListeners() {
             orderedQuantity.innerText = `${quantity.innerText}`
 
 
+
+            const allOrders = document.querySelectorAll('.order')
+            console.log(allOrders)
             // ****start from here
             //Counter
             increment.addEventListener('click', () => {
@@ -186,15 +190,34 @@ function addCartListeners() {
             decrement.addEventListener('click', () => {
                 if (i <= 0) {
                     order.remove()
-                    
+                    counter.style.display = 'none'
+
                 } else {
                     i--;
                     quantity.innerText = i;
                     orderedQuantity.innerText = `${quantity.innerText}`
                 }
             });
+
+            const allOrder = document.querySelectorAll('.order')
+            console.log(allOrder.length)
+
+
         });
     });
 }
 
 fetchDesserts();
+
+// //showState
+// function showState() {
+//     const allOrders = document.querySelectorAll('.order')
+//     const activeState = document.querySelector('.activeState')
+//     const emptyState = document.querySelector('.emptyState')
+
+//     if (allOrders.length <= 0) {
+//         activeState.style.display = 'none'
+//         emptyState.style.display = 'block'
+//     }
+// }
+// showState()

@@ -44,135 +44,43 @@ h2 {
   color: #fccb06;
 }
 
- 
-
-.slide {
-  position: relative;
-  min-height: 100vh;
-  padding: 2rem;
+nav{
   background: var(--primary);
-  display: none;
-}
-
-.slide.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.buttons {
-  position: absolute;
-  width: 95%;
+  color: var(--logo);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
-.btn {
-  background: var(--tertiary);
-  color: var(--primary);
+.logo{
   font-size: 1.5rem;
-  padding: 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.text {
-  text-align: center;
-  width: 75%;
-}
-
-.arabicText {
-  font-size: 3rem;
-}
-
-.engText {
-  font-size: 1rem;
-  margin-block: 1.2rem 1.4rem;
-  line-height: 1.5;
-}
-
-.reference {
-  font-size: 0.8rem;
-}
-
-.addBookmark {
-  background: var(--secondary);
-  padding: 2rem;
-  text-align: center;
-}
-
-.container {
-  display: grid;
-  grid-template-areas: "surahNo verseNo add";
-  gap: 1rem;
-}
-
-#surahNo {
-  grid-area: surahNo;
-}
-
-#verseNo {
-  grid-area: verseNo;
-}
-
-#add {
-  grid-area: add;
-}
-
-input {
-  width: 100%;
-  padding: 2rem;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-}
-
-input[type="submit"] {
-  background: var(--tertiary);
-  color: var(--primary);
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
-/* For Chrome, Safari, Edge, Opera */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+ul{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
 }
 
-/* For Firefox */
-/* input[type="number"] {
-    -moz-appearance: textfield;
-} */
-
-.wrapper {
-  width: 80%;
-  margin: 2rem auto;
-  text-align: center;
+li{
+  list-style: none;
 }
+
+a{
+  text-decoration: none;
+  color: var(--logo);
+}
+
+
 
 @media (max-width: 768px) {
-  .container {
-    grid-template-areas: "surahNo verseNo" "add add";
-  }
-
-  .btn {
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-
-  .arabicText {
-    font-size: 2rem;
-  }
-
-  .engText {
-    font-size: 0.7rem;
-  }
-
-  .reference {
-    font-size: 0.5rem;
+  ul{
+    width: 70%;
   }
 }

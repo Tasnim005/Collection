@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
     setTimeout(function() {
         // Hide the loading screen and reveal the main content
         document.getElementById("loading-screen").style.display = "none";
-    }, 3000); // This is a 2-second delay; replace with your actual load time
+    }, 2000); // This is a 2-second delay; replace with your actual load time
 });
 
 
@@ -19,7 +19,7 @@ paths.forEach((path)=>{
   targets: path,
   strokeDashoffset: [anime.setDashoffset, 0],
   easing: 'easeInOutSine', // Choose the easing function you prefer
-  duration: 3000, // Animation duration in milliseconds
+  duration: 2000, // Animation duration in milliseconds
   direction: 'alternate',
   loop: true
 });
