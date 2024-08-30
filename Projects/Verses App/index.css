@@ -127,8 +127,4 @@ input[type="number"]::-webkit-inner-spin-button {
   .reference {
     font-size: 0.5rem;
   }
-
-  ul{
-    width: 70%;
-  }
 }

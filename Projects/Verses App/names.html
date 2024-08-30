@@ -6,11 +6,12 @@
     <title>Verse</title>
     <link rel="shortcut icon" href="images/T.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="name.css">
+    <link rel="stylesheet" href="name.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+
   </head>
   <body>
-     <section id="loading-screen" class="loading">
+   <section id="loading-screen" class="loading">
       <svg
         class="opening"
         width="136"
@@ -86,27 +87,51 @@
           mask="url(#path-1-outside-1_904_19)"
         />
       </svg>
-    </section>
+    </section> 
 
     <nav>
       <div class="logo">
         <p>Verse</p>
       </div>
-      <ul>
+      <ul class="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#carousel">Featured</a></li>
         <li><a href="index.html#bookmark">Bookmarks</a></li>
         <li><a href="names.html">99 Names</a></li>
       </ul>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </nav>
 
-    <main>
+    <main></main>
 
-    </main>
+    <!-- ***** -->
+    <!-- Registration Form -->
+    <section id="register">
+      <h2>Register</h2>
+      <input type="email" id="register-email" placeholder="Email" />
+      <input type="password" id="register-password" placeholder="Password" />
+      <button id="register-button">Register</button>
+    </section>
 
-   
+    <!-- Login Form -->
+    <section id="login">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-button">Login</button>
+    </section>
 
-    <script src="names.js"></script>
+    <!-- Logout Button -->
+    <button id="logout-button">Logout</button>
+
     <script src="script.js"></script>
+    <script src="names.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="auth-logic.js"></script>
   </body>
 </html>
