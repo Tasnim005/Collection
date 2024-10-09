@@ -104,3 +104,5 @@ function addBookmarkToDOM(arabic, english, surahName, verseNumber) {
     document.querySelector('.bookmark').appendChild(wrapper);
 }
 
+
+

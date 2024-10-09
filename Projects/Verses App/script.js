@@ -29,6 +29,13 @@ const ul = document.querySelector('.navLinks')
 const navLinks = document.querySelectorAll('.navLinks li');
 const hamburger = document.querySelector('.hamburger')
 
+const avatar = document.getElementById('avatar')
+const dropdown = document.querySelector('.dropdown')
+
+avatar.addEventListener('click', ()=>{
+    dropdown.classList.toggle('active')
+})
+
 hamburger.addEventListener('click', ()=>{
     ul.classList.toggle('openMenu')
 })

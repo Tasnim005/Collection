@@ -1,6 +1,6 @@
 main{
     width: 80%;
-    margin: 5rem auto 3rem auto;
+    margin: 6rem auto 3rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     place-content: center;
@@ -8,10 +8,17 @@ main{
 }
 
 .box{
-    border: 1px solid var(--tertiary);
+    border: 2px solid var(--tertiary);
     border-radius: 8px;
     text-align: center;
     padding: 1rem;
+}
+
+.box:hover{
+    background: var(--dark);
+    color: var(--primary);
+    border: none;
+    /* border-style: dashed; */
 }
 
 .arabicName{
@@ -21,7 +28,7 @@ main{
 
 .transliteration{
     font-size: 1rem;
-    color: #575757;
+    /* color: #575757; */
     margin-block: 0.5rem;
 }
 

@@ -8,6 +8,11 @@ let i = 0;
 // Initially, apply the 'active' class to the first testimonial
 slides[i].classList.add('active');
 
+// Automatically move slides every 3 seconds
+const interval = 6000; // 6 seconds
+setInterval(forward, interval);
+
+/*
 nextButton.forEach((item) => {
     item.addEventListener('click', forward);
 })
@@ -15,7 +20,7 @@ nextButton.forEach((item) => {
 prevButton.forEach((item) => {
     item.addEventListener('click', backward);
 })
-
+*/
 
 
 function forward() {
@@ -45,5 +50,4 @@ function backward() {
     // Add 'active' class to the previous testimonial
     slides[i].classList.add('active');
 }
-
 
