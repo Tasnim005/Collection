@@ -1,0 +1,46 @@
+main {
+  margin-top: 15vh;
+
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+input {
+  background: rgba(0, 0, 0, 0.08);
+  width: 100%;
+  padding: 1.3rem 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+}
+
+input:hover{
+  outline: 1px solid var(--logo);
+}
+
+input:focus{
+  outline: 2px solid var(--tertiary);
+}
+
+button {
+  background: var(--logo);
+  color: #fff;
+  width: 100%;
+  padding: 1.3rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  transition: all 200ms ease-in;
+  cursor: pointer;
+}
+
+button:hover{
+  background: var(--tertiary);
+  border-radius: 0;
+}
+
+p{
+  margin-top: 1rem;
+}

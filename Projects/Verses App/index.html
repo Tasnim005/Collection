@@ -99,6 +99,18 @@
         <li><a href="index.html#bookmark">Bookmarks</a></li>
         <li><a href="names.html">99 Names</a></li>
       </ul>
+
+      
+      <div id="profile-section">
+        <div id="avatar"></div>
+        <p id="user-email"></p>
+        <a id="logout-button" class="authBtn">Logout</a>
+      </div>
+      <div id="signin-section" >
+        <a href="auth.html" class="authBtn">Sign In</a>
+      </div>
+
+
       <div class="hamburger">
         <div class="line"></div>
         <div class="line"></div>
@@ -199,30 +211,11 @@
       <h2>View Existing Bookmarks</h2>
     </section>
 
-    <!-- ***** -->
-    <!-- Registration Form -->
-    <section id="register">
-      <h2>Register</h2>
-      <input type="email" id="register-email" placeholder="Email" />
-      <input type="password" id="register-password" placeholder="Password" />
-      <button id="register-button">Register</button>
-    </section>
-
-    <!-- Login Form -->
-    <section id="login">
-      <h2>Login</h2>
-      <input type="email" id="login-email" placeholder="Email" />
-      <input type="password" id="login-password" placeholder="Password" />
-      <button id="login-button">Login</button>
-    </section>
-
-    <!-- Logout Button -->
-    <button id="logout-button">Logout</button>
-
     <script src="script.js"></script>
     <script src="index.js"></script>
     <script type="module" src="firebase-config.js"></script>
     <script type="module" src="auth.js"></script>
     <script type="module" src="auth-logic.js"></script>
+    <script type="module" src="bookmark.js"></script>
   </body>
 </html>

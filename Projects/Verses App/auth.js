@@ -78,7 +78,7 @@ function signOutUser() {
 */
 
 // auth.js
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 import { app } from './firebase-config.js';  // Correct path to your config file
 
 // Initialize Firebase Authentication
@@ -93,4 +93,6 @@ export const registerUser = (email, password) => {
 export const signInUser = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
+
+
 
