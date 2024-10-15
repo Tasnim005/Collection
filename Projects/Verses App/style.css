@@ -130,6 +130,16 @@ a {
   gap: 1rem;
 }
 
+.dropdown p,
+.dropdown a{
+  cursor: pointer;
+}
+
+.dropdown p:hover,
+.dropdown a:hover{
+  text-decoration: underline;
+}
+
 #logout-button{
   color: var(--primary);
 }

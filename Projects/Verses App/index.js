@@ -9,7 +9,7 @@ let i = 0;
 slides[i].classList.add('active');
 
 // Automatically move slides every 3 seconds
-const interval = 6000; // 6 seconds
+const interval = 5000; // 5 seconds
 setInterval(forward, interval);
 
 /*
@@ -50,4 +50,3 @@ function backward() {
     // Add 'active' class to the previous testimonial
     slides[i].classList.add('active');
 }
-
