@@ -93,8 +93,8 @@ let i = 0;
 // Initially, apply the 'active' class to the first testimonial
 slides[i].classList.add('active');
 
-// Automatically move slides every 3 seconds
-const interval = 6000; // 6 seconds
+// Automatically move slides every 8 seconds
+const interval = 8000; // 8 seconds
 setInterval(forward, interval);
 
 
