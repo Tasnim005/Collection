@@ -8,6 +8,4 @@
 - Minor modifications made across the app; no major updates to report.
 
 ## Resolved Issues
-- Navbar height and background color have been resolved, with position: sticky applied across all pages for consistency.
-- The button-container in Quotes.html has been moved outside the carousel and placed in a separate section due to positioning difficulties inside the carousel. This issue will be revisited in future updates.
-- Slide transition timing for both index.html and quotes.html has been adjusted for smoother navigation.
+- Spacing or padding for the wrapper in Quotes.html has been modified, and its min-height has been set to auto.
