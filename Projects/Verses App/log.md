@@ -5,7 +5,9 @@
 - Remove Bookmark Addition and display tab from the logged-out client view.
 
 ## Updates
-- Minor modifications made across the app; no major updates to report.
+- **Dynamic Image Handling for Quotes:** Instead of storing image URLs in Firestore, a random image fetched from the Pixabay API is inserted into the quote wrapper on each page refresh. This change ensures that images are not repeated unnecessarily and keeps the display fresh.
+- **Diverse Image Query:** The image-fetching query has been updated to select from a broader range of categories, ensuring more diverse and relevant imagery instead of displaying a single category.
+
 
 ## Resolved Issues
-- Spacing or padding for the wrapper in Quotes.html has been modified, and its min-height has been set to auto.
+- None

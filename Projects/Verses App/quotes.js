@@ -1,4 +1,3 @@
-// Add Quotes
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js';
 import { app } from './firebase-config.js';
@@ -6,19 +5,33 @@ import { app } from './firebase-config.js';
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
-// Function to upload a quote to Firestore under userID with imageURL
-async function uploadQuoteToFirestore(userID, quoteText, imageURL) {
+// Function to upload a quote to Firestore under userID without imageURL
+async function uploadQuoteToFirestore(userID, quoteText) {
     const userQuotesRef = collection(firestore, `database/${userID}/userQuotes`);
-    const newQuote = { quoteText, imageURL };
+    const newQuote = { quoteText }; // No imageURL is stored
 
     try {
         await addDoc(userQuotesRef, newQuote);
-        // No need to call addQuoteToDOM here
     } catch (error) {
         console.error('Error adding quote:', error);
     }
 }
 
+// Function to fetch a random image from the Pixabay API
+async function fetchRandomImage() {
+    const randomQueryArr = ['sunrise', 'sunset', 'night', 'sea', 'mountain', 'autumn', 'trees', 'snow+mountain', 'galaxy'];
+    const randomQuery = randomQueryArr[Math.floor(Math.random() * randomQueryArr.length)];
+
+    try {
+        const response = await fetch(`https://pixabay.com/api/?key=28972326-d4e9a2250d64e5c4a680ac22c&q=${randomQuery}&image_type=photo&per_page=50`);
+        const data = await response.json();
+        const randomIndex = Math.floor(Math.random() * data.hits.length);
+        return data.hits[randomIndex].largeImageURL;
+    } catch (error) {
+        console.error('Error fetching random image:', error);
+        return null; // Handle cases where image fetching fails
+    }
+}
 
 // Fetch and display existing quotes after authentication
 onAuthStateChanged(auth, async (user) => {
@@ -30,10 +43,14 @@ onAuthStateChanged(auth, async (user) => {
         // Clear the DOM first to avoid duplication
         document.querySelector('.collection').innerHTML = '';
 
-        querySnapshot.forEach((doc) => {
+        for (const doc of querySnapshot.docs) {
             const data = doc.data();
-            addQuoteToDOM(data.quoteText, data.imageURL); // Display the quote from Firestore
-        });
+            const randomImageURL = await fetchRandomImage(); // Fetch random image
+
+            if (randomImageURL) {
+                addQuoteToDOM(data.quoteText, randomImageURL); // Use a new random image each time
+            }
+        }
     } else {
         console.log('User not authenticated');
     }
@@ -47,20 +64,14 @@ add.addEventListener('click', async () => {
     const quoteValue = quote.value;
 
     if (quoteValue) {
-        try {
-            const response = await fetch(`https://pixabay.com/api/?key=28972326-d4e9a2250d64e5c4a680ac22c&q=night&image_type=photo&per_page=100`);
-            const data = await response.json();
+        const randomImageURL = await fetchRandomImage(); // Fetch random image once for the new quote
 
-            const randomIndex = Math.floor(Math.random() * 100)
-            const imageURL = data.hits[randomIndex].largeImageURL
-
-            addQuoteToDOM(quoteValue, imageURL)
+        if (randomImageURL) {
+            addQuoteToDOM(quoteValue, randomImageURL); // Add the quote to the DOM with the fetched image
 
             if (auth.currentUser) {
-                uploadQuoteToFirestore(auth.currentUser.uid, quoteValue, imageURL);
+                uploadQuoteToFirestore(auth.currentUser.uid, quoteValue); // Only store the quote text in Firestore
             }
-        } catch (error) {
-            console.error('Error fetching image:', error);
         }
     } else {
         alert('Please insert your quote');
@@ -80,6 +91,8 @@ function addQuoteToDOM(text, bgImage) {
 
     document.querySelector('.collection').appendChild(wrapper);
 }
+
+
 
 
 // Carousel
