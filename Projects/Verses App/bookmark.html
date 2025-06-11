@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verse</title>
     <link rel="shortcut icon" href="images/T.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="bookmark.css" />
     <link rel="stylesheet" href="style.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
@@ -94,8 +94,7 @@
         <p>Verse</p>
       </div>
       <ul class="navLinks">
-        <li><a href="#">Home</a></li>
-        <li><a href="index.html#carousel">Featured</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="bookmark.html">Bookmarks</a></li>
         <li><a href="names.html">99 Names</a></li>
         <li><a href="quotes.html">Quotes</a></li>
@@ -115,190 +114,32 @@
             <a id="logout-button">Logout</a>
           </div>
         </div>
-        <div id="signin-section">
+        <div id="signin-section" >
           <a href="auth.html" class="authBtn">Sign In</a>
         </div>
       </div>
+      
     </nav>
 
-    <section class="carousel" id="carousel">
-      <div class="slide active">
-        <div class="text">
-          <p class="arabicText">
-            فَإِن تَوَلَّوْا۟ فَقُلْ حَسْبِىَ ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ
-            ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ ٱلْعَرْشِ ٱلْعَظِيمِ ١٢٩
-          </p>
-          <p class="engText">
-            But if they turn away, then say, ˹O Prophet,˺ “Allah is sufficient
-            for me. There is no god ˹worthy of worship˺ except Him. In Him I put
-            my trust. And He is the Lord of the Mighty Throne.”
-          </p>
-          <p class="reference">Surah At-Tawbah; Verse-129</p>
-        </div>
 
-        <div class="buttons">
-          <button class="backward btn">&#8678;</button>
-          <button class="forward btn">&#8680;</button>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="text">
-          <p class="arabicText">
-            وَقَالَ رَبُّكُمُ ٱدْعُونِىٓ أَسْتَجِبْ لَكُمْ ۚ إِنَّ ٱلَّذِينَ
-            يَسْتَكْبِرُونَ عَنْ عِبَادَتِى سَيَدْخُلُونَ جَهَنَّمَ دَاخِرِينَ
-            ٦٠
-          </p>
-          <p class="engText">
-            Your Lord has proclaimed, “Call upon Me, I will respond to you.
-            Surely those who are too proud to worship Me will enter Hell, fully
-            humbled.”
-          </p>
-          <p class="reference">Surah Ghafir; Verse 60</p>
-        </div>
-
-        <div class="buttons">
-          <button class="backward btn">&#8678;</button>
-          <button class="forward btn">&#8680;</button>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="text">
-          <p class="arabicText">
-            فَٱذْكُرُونِىٓ أَذْكُرْكُمْ وَٱشْكُرُوا۟ لِى وَلَا تَكْفُرُونِ
-          </p>
-          <p class="engText">
-            Remember Me; I will remember you. And thank Me, and never be
-            ungrateful.
-          </p>
-          <p class="reference">Surah Al-Baqarah; Verse-152</p>
-        </div>
-
-        <div class="buttons">
-          <button class="backward btn">&#8678;</button>
-          <button class="forward btn">&#8680;</button>
-        </div>
-      </div>
-
-      <div class="slide">
-        <div class="text">
-          <p class="arabicText">
-            وَٱلَّذِينَ يَقُولُونَ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَٰجِنَا
-            وَذُرِّيَّـٰتِنَا قُرَّةَ أَعْيُنٍۢ وَٱجْعَلْنَا لِلْمُتَّقِينَ
-            إِمَامًا ٧٤
-          </p>
-          <p class="engText">
-            ˹They are˺ those who pray, “Our Lord! Bless us with ˹pious˺ spouses
-            and offspring who will be the joy of our hearts, and make us models
-            for the righteous.”
-          </p>
-          <p class="reference">Surah Al-Furqan; Verse-74</p>
-        </div>
-
-        <div class="buttons">
-          <button class="backward btn">&#8678;</button>
-          <button class="forward btn">&#8680;</button>
-        </div>
+    <section class="addBookmark">
+      <h2>Add New Bookmarks</h2>
+      <div class="container">
+        <input type="number" id="surahNo" placeholder="Surah Number" />
+        <input type="number" id="verseNo" placeholder="Verse Number" />
+        <input type="submit" value="ADD" id="add" />
       </div>
     </section>
 
-    <section class="prayers">
-      <h1>Dua of the Prophets</h1>
-
-      <div class="prayer">
-        <p class="arabicText">حَسْبُنَا ٱللَّهُ وَنِعْمَ ٱلْوَكِيلُ</p>
-        <p class="engText">
-          “Allah ˹alone˺ is sufficient ˹as an aid˺ for us and ˹He˺ is the best
-          Protector.”
-        </p>
-        <p class="reference">
-          Surah Al-Imran; Verse 173; <b>Dua of Prophet Ibrahim (A)</b>
-        </p>
-      </div>
-
-      <div class="prayer">
-        <p class="arabicText">
-          لَّآ إِلَـٰهَ إِلَّآ أَنتَ سُبْحَـٰنَكَ إِنِّى كُنتُ مِنَ
-          ٱلظَّـٰلِمِينَ
-        </p>
-        <p class="engText">
-          “There is no god ˹worthy of worship˺ except You. Glory be to You! I
-          have certainly done wrong.”
-        </p>
-        <p class="reference">
-          Surah Al-Anbya; Verse 87; <b>Dua of Prophet Yunus (A)</b>
-        </p>
-      </div>
-
-      <div class="prayer">
-        <p class="arabicText">
-          وَأَيُّوبَ إِذْ نَادَىٰ رَبَّهُۥٓ أَنِّى مَسَّنِىَ ٱلضُّرُّ وَأَنتَ
-          أَرْحَمُ ٱلرَّٰحِمِينَ
-        </p>
-        <p class="engText">
-          And ˹remember˺ when Ayyub cried out to his Lord, “I have been touched
-          with adversity, and You are the Most Merciful of the merciful.”
-        </p>
-        <p class="reference">
-          Surah Al-Anbya; Verse 83; <b>Dua of Prophet Ayyub (A)</b>
-        </p>
-      </div>
-
-      <div class="prayer">
-        <p class="arabicText">فَدَعَا رَبَّهُۥٓ أَنِّى مَغْلُوبٌۭ فَٱنتَصِرْ</p>
-        <p class="engText">
-          So he cried out to his Lord, “I am helpless, so help ˹me˺!”
-        </p>
-        <p class="reference">
-          Surah Al-Qamar; Verse 10; <b>Dua of Prophet Nuh (A)</b>
-        </p>
-      </div>
-
-      <div class="prayer">
-        <p class="arabicText">
-          فَسَقَىٰ لَهُمَا ثُمَّ تَوَلَّىٰٓ إِلَى ٱلظِّلِّ فَقَالَ رَبِّ إِنِّى
-          لِمَآ أَنزَلْتَ إِلَىَّ مِنْ خَيْرٍ فَقِيرٌ
-        </p>
-        <p class="engText">
-          So he watered ˹their herd˺ for them, then withdrew to the shade and
-          prayed, “My Lord! I am truly in ˹desperate˺ need of whatever provision
-          You may have in store for me.”
-        </p>
-        <p class="reference">
-          Surah Al-Qasas; Verse 24; <b>Dua of Prophet Musa (A)</b>
-        </p>
-      </div>
-
-      <div class="prayer">
-        <p class="arabicText">
-          قَالَ رَبِّ ٱشْرَحْ لِى صَدْرِى ٢٥ وَيَسِّرْ لِىٓ أَمْرِى ٢٦ وَٱحْلُلْ
-          عُقْدَةًۭ مِّن لِّسَانِى ٢٧ يَفْقَهُوا۟ قَوْلِى ٢٨
-        </p>
-        <p class="engText">
-          Moses prayed, “My Lord! Uplift my heart for me, and make my task easy,
-          and remove the impediment from my tongue so people may understand my
-          speech.
-        </p>
-        <p class="reference">
-          Surah Taha; Verse 25-28; <b>Dua of Prophet Musa (A)</b>
-        </p>
-      </div>
-
-      <div class="prayer">
-        <p class="arabicText">رَّبِّ زِدْنِى عِلْمًۭا</p>
-        <p class="engText">“My Lord! Increase me in knowledge.”</p>
-        <p class="reference">
-          Surah Taha; Verse 114; <b>Dua of Prophet Musa (A)</b>
-        </p>
-      </div>
+    <section class="bookmark" id="bookmark">
+      <h2>View Existing Bookmarks</h2>
     </section>
 
     <script src="script.js"></script>
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
+        <script type="module" src="bookmark.js"></script>
     <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="auth.js"></script>
+    <!-- <script type="module" src="auth.js"></script> -->
     <script type="module" src="auth-logic.js"></script>
-    <script type="module" src="bookmark.js"></script>
   </body>
 </html>
