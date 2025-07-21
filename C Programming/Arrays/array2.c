@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 
 int main(){
@@ -20,4 +21,40 @@ int main(){
 
     return 0;
 
+}
+*/
+
+#include <stdio.h>
+
+int main(){
+    int terms, i, elements[100], sum=0;
+
+    printf("Enter the no of elements (max 100): ");
+    scanf("%d", &terms);
+
+    if(terms>100 || terms<1){
+        printf("Enter valid no of terms!");
+        return 0;
+    }
+
+    printf("Enter %d elements: \n", terms);
+
+    for(i=0; i<terms; i++){
+        printf("Element %d: ", i+1);
+        scanf("%d", &elements[i]);
+
+        sum = sum+elements[i];
+    }
+
+
+    printf("You entered: ");
+
+    for(i=0; i<terms; i++){
+        printf("%d ", elements[i]);
+    }
+
+
+    printf("\nSummation of %d elements: %d\n", terms, sum);
+
+    return 0;
 }
