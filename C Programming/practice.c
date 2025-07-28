@@ -158,6 +158,52 @@ int main(){
     printf("Welcome to ME %d department!", num);
     */
 
+    /*
+// Triangle
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c;
+    printf("Enter three sides of a triangle:\n");
+    scanf("%f %f %f", &a, &b, &c);
+
+    if(a<0 || b<0 || c<0){
+        printf("Invalid! Enter postive number.\n");
+        return 1;
+    }
+
+    if ((a + b > c) && (a + c > b) && (b + c > a)) {
+        printf("It's a valid triangle\n");
+    } else {
+        printf("Invalid triangle\n");
+    }
+
+    float area, s;
+    s = (a+b+c)/2;
+    area = sqrt(s*(s-a)*(s-b)*(s-c));
+
+    printf("Perimeter of the triangle is %.2f\n", 2*s);
+    printf("Area of the triangle is %.2f\n", area);
+
+    return 0;
+}
+*/
+
+/*
+#include <stdio.h>
+
+int main(){
+    float temp, fahrenheit;
+    printf("Enter temperature in Celsius: ");
+    scanf("%f", &temp);
+
+    fahrenheit = ((9.0/5.0)*temp)+32;
+    printf("\nTemperature in Fahrenheit is %f\n", fahrenheit);
+    return 0;
+}
+*/
+
     char name[50];
     char grade;
 
@@ -173,3 +219,6 @@ int main(){
     printf("Name: %s Age: %d\n GPA: %f\n Grade: %c\n", name, age, gpa, grade);
 
 }
+
+
+

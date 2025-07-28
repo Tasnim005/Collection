@@ -1,33 +1,33 @@
 #include <stdio.h>
 
 int main(){
-    float num1, num2, result;
+    double num1, num2;
     char operator;
 
-    printf("Enter num1 followed by operator folllowed by num2: \n");
-    scanf("%f %c %f", &num1, &operator, &num2);
+    printf("Enter a number: ");
+    scanf("%lf", &num1);
 
-    switch (operator){
-        case '+':
-            printf("%f + %f = %f", num1, num2, num1+num2);
-            break;
-        case '-':
-            printf("%f - %f = %f", num1, num2, num1-num2);
-            break;
-        case '*':
-            printf("%f * %f = %f", num1, num2, num1*num2);
-            break;
-        case '/':
+    printf("Enter operator: ");
+    scanf(" %c", &operator);
+
+    printf("Enter another number: ");
+    scanf("%lf", &num2);
+
+    switch(operator){
+        case '+' : printf("%lf + %lf = %.2lf\n", num1, num2, num1+num2); break;
+        case '-' : printf("%lf - %lf = %.2lf\n", num1, num2, num1-num2); break;
+        case '*' : printf("%lf * %lf = %.2lf\n", num1, num2, num1*num2); break;
+        case '/' : 
             if(num2==0){
-                printf("Math Error");
+                printf("Invalid!\n");
+                break;
             }else{
-                printf("%f / %f = %f", num1, num2, num1/num2);
+                printf("%lf / %lf = %.2lf\n", num1, num2, num1/num2);
+                break;
             }
-            break;
-        default:
-            printf("Invalid operator. Use one of +, -, *, /.\n");
-            break;    
+        default: printf("Invalid operator!\n"); break;
     }
 
     return 0;
 }
+

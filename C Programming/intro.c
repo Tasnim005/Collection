@@ -26,11 +26,20 @@ int main(){
     printf("Sum is %d\n", num1+num2);
 
     // Convert Celsius to Fahrenheit
-    float temperature;
-    printf("Temperature in Celsius: ");
-    scanf("%f", &temperature);
-    printf("Temperature in Fahrenheit: %f \n", (temperature * 9/5)+32);
+    /*
+    #include <stdio.h>
 
+    int main(){
+        float temp, fahrenheit;
+        printf("Enter temperature in Celsius: ");
+        scanf("%f", &temp);
+
+        fahrenheit = ((9.0/5.0)*temp)+32;
+        printf("\nTemperature in Fahrenheit is %f\n", fahrenheit);
+        return 0;
+    }
+    */
+    
     // Swap two numbers
     int a;
     int b;

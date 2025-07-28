@@ -129,45 +129,39 @@ int main(){
 // Checking for Prime Number
 #include <stdio.h>
 
-int main() {
-    int i, num, isPrime = 1;
-
+int main(){
+    int num;
     printf("Enter a number: ");
     scanf("%d", &num);
 
     if (num <= 1) {
-        printf("%d isn't a prime number\n", num);
-        return 0;
+        printf("%d is not a prime number\n", num);
+        return 1;
     }
 
     if (num == 2) {
-        printf("2 is a prime number\n");
+        printf("%d is a prime number\n", num);
         return 0;
     }
 
     if (num % 2 == 0) {
         printf("%d is not a prime number\n", num);
-        return 0;
+        return 1;
     }
 
     // A prime number is divisible only by 1 and itself. So when checking for divisors, you only need to test up to √num, and you should never test num itself
 
-    for (i = 3; i*i<= num; i += 2) { //i*i <= num is more efficient than i<num because no factors of num can be larger than its square root.
+    for (int i = 3; i * i <= num; i += 2) { //i*i <= num is more efficient than i<num because no factors of num can be larger than its square root.
         if (num % i == 0) {
-            isPrime = 0;
-            break;
+            printf("%d is not a prime number\n", num);
+            return 1;
         }
     }
 
-    if (isPrime) {
-        printf("%d is a prime number\n", num);
-    } else {
-        printf("%d is not a prime number\n", num);
-    }
-
+    // If we reach here, number is prime
+    printf("%d is a prime number\n", num);
     return 0;
 }
-*/
 
 
 /*
