@@ -21,3 +21,6 @@ int main(){
 
     return 0;
 }
+
+
+// Rowwise and columnwise max and min in 2d array
